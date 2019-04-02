@@ -11,7 +11,15 @@ using System.Windows.Forms;
 namespace QuizApplication
 {
     public partial class QuizApplication : Form
+
+
+
     {
+
+	
+
+	
+
         public QuizApplication()
         {
             InitializeComponent();
@@ -28,16 +36,13 @@ namespace QuizApplication
         public static extern bool ReleaseCapture();
         /// </summary>
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-            ///////////
-        }
 
         private void QuizApplication_Load(object sender, EventArgs e)
         {
-            /////////////
-        }
-
+			
+			
+	    }
+		 
         private void timer1_Tick(object sender, EventArgs e)
         {
             ///timer opacity exitt
@@ -161,56 +166,10 @@ namespace QuizApplication
 
 
         }
+		
 
-        private void logobox_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        
-
-        private void homebutton_Click(object sender, EventArgs e)
-        {
-           
-          
-        }
-
-        private void quizlistbutton_Click(object sender, EventArgs e)
-        {
-           
-
-            
-        }
-
-        private void scoreboardbutton_Click(object sender, EventArgs e)
-        {
-            
-
-          
-        }
-
-        private void languagebutton_Click(object sender, EventArgs e)
-        {
-           
-          
-        }
-
-        private void contactbutton_Click(object sender, EventArgs e)
-        {
-            
-            
-        }
-
-        private void mainpanel_Paint(object sender, PaintEventArgs e)
-        {
-            //////////////
-        }
-
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
+        		
+      
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
@@ -226,31 +185,40 @@ namespace QuizApplication
 
         }
 
-        private void homepanel_Paint(object sender, PaintEventArgs e)
-        {
+        
 
-        }
-
-        private void logobox_MouseHover(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void logobox_MouseLeave(object sender, EventArgs e)
-        {
-       
-        }
 
         private void homebutton_Click_1(object sender, EventArgs e)
         {
-            welcome.Visible = false;
-            homepanel.Visible = true;
-            homeactivatelabel.Visible = true;
-            quizlistpanel.Visible = false;
+	
+
+			welcome.Visible = false;
+			h1.Visible = true;
+			h2.Visible = true;
+			h3.Visible = true;
+			h4.Visible = true;
+			h5.Visible = true;
+			h6.Visible = true;
+			h7.Visible = true;
+			h8.Visible = true;
+			h9.Visible = true;
+			h10.Visible = true;
+			h11.Visible = true;
+			h12.Visible = true;
+
+			c1.Visible = false;
+			c2.Visible = false;
+			c3.Visible = false;
+			c4.Visible = false;
+			c5.Visible = false;
+			c6.Visible = false;
+			c7.Visible = false;
+			c8.Visible = false;
+
+			homeactivatelabel.Visible = true;
+           
             quizactivatelabel.Visible = false;
-            scoreboardpanel.Visible = false;
-            languagepanel.Visible = false;
-            contactpanel.Visible = false;
+            
 
 
             
@@ -271,14 +239,30 @@ namespace QuizApplication
         private void quizlistbutton_Click_1(object sender, EventArgs e)
         {
             welcome.Visible = false;
-            homepanel.Visible = false;
-            quizlistpanel.Visible = true;
-            scoreboardpanel.Visible = false;
-            languagepanel.Visible = false;
-            contactpanel.Visible = false;
-            
+			h1.Visible = false;
+			h2.Visible = false;
+			h3.Visible = false;
+			h4.Visible = false;
+			h5.Visible = false;
+			h6.Visible = false;
+			h7.Visible = false;
+			h8.Visible = false;
+			h9.Visible = false;
+			h10.Visible = false;
+			h11.Visible = false;
+			h12.Visible = false;
 
-                homeactivatebox.Visible = false;
+			c1.Visible = false;
+			c2.Visible = false;
+			c3.Visible = false;
+			c4.Visible = false;
+			c5.Visible = false;
+			c6.Visible = false;
+			c7.Visible = false;
+			c8.Visible = false;
+
+
+			homeactivatebox.Visible = false;
                 homeactivatelabel.Visible = false;
                 quizactivatebox.Visible = true;
                 quizactivatelabel.Visible = true;
@@ -294,12 +278,30 @@ namespace QuizApplication
 
         private void scoreboardbutton_Click_1(object sender, EventArgs e)
         {
-            welcome.Visible = false;
-            homepanel.Visible = false;
-            quizlistpanel.Visible = false;
-            scoreboardpanel.Visible = true;
-            languagepanel.Visible = false;
-            contactpanel.Visible = false;
+
+
+			h1.Visible = false;
+			h2.Visible = false;
+			h3.Visible = false;
+			h4.Visible = false;
+			h5.Visible = false;
+			h6.Visible = false;
+			h7.Visible = false;
+			h8.Visible = false;
+			h9.Visible = false;
+			h10.Visible = false;
+			h11.Visible = false;
+			h12.Visible = false;
+			c1.Visible = false;
+			c2.Visible = false;
+			c3.Visible = false;
+			c4.Visible = false;
+			c5.Visible = false;
+			c6.Visible = false;
+			c7.Visible = false;
+			c8.Visible = false;
+			welcome.Visible = false;
+         
             
 
                 homeactivatebox.Visible = false;
@@ -318,13 +320,28 @@ namespace QuizApplication
         private void languagebutton_Click_1(object sender, EventArgs e)
         {
             welcome.Visible = false;
-            homepanel.Visible = false;
-            quizlistpanel.Visible = false;
-            scoreboardpanel.Visible = false;
-            languagepanel.Visible = true;
-            contactpanel.Visible = false;
-            
-                homeactivatebox.Visible = false;
+			h1.Visible = false;
+			h2.Visible = false;
+			h3.Visible = false;
+			h4.Visible = false;
+			h5.Visible = false;
+			h6.Visible = false;
+			h7.Visible = false;
+			h8.Visible = false;
+			h9.Visible = false;
+			h10.Visible = false;
+			h11.Visible = false;
+			h12.Visible = false;
+			c1.Visible = false;
+			c2.Visible = false;
+			c3.Visible = false;
+			c4.Visible = false;
+			c5.Visible = false;
+			c6.Visible = false;
+			c7.Visible = false;
+			c8.Visible = false;
+
+			homeactivatebox.Visible = false;
                 homeactivatelabel.Visible = false;
                 quizactivatebox.Visible = false;
                 quizactivatelabel.Visible = false;
@@ -340,13 +357,29 @@ namespace QuizApplication
         private void contactbutton_Click_1(object sender, EventArgs e)
         {
             welcome.Visible = false;
-            homepanel.Visible = false;
-            quizlistpanel.Visible = false;
-            scoreboardpanel.Visible = false;
-            languagepanel.Visible = false;
-            contactpanel.Visible = true;
-           
-                homeactivatebox.Visible = false;
+
+			h1.Visible = false;
+			h2.Visible = false;
+			h3.Visible = false;
+			h4.Visible = false;
+			h5.Visible = false;
+			h6.Visible = false;
+			h7.Visible = false;
+			h8.Visible = false;
+			h9.Visible = false;
+			h10.Visible = false;
+			h11.Visible = false;
+			h12.Visible = false;
+			c1.Visible = true;
+			c2.Visible = true;
+			c3.Visible = true;
+			c4.Visible = true;
+			c5.Visible = true;
+			c6.Visible = true;
+			c7.Visible = true;
+			c8.Visible = true;
+
+			homeactivatebox.Visible = false;
                 homeactivatelabel.Visible = false;
                 quizactivatebox.Visible = false;
                 quizactivatelabel.Visible = false;
@@ -359,5 +392,29 @@ namespace QuizApplication
                
             
         }
-    }
+
+		private void a_Paint(object sender, PaintEventArgs e)
+		{
+
+		}
+
+		private void label1_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void c5_Click(object sender, EventArgs e)
+		{
+			string name = c8.Text;
+			string email = c7.Text;
+			string message = c6.Text;
+
+			MessageBox.Show("Thank You For Your Sumbit    " + "--" + name + "--" );
+		}
+
+		private void h2_Click(object sender, EventArgs e)
+		{
+
+		}
+	}
 }
