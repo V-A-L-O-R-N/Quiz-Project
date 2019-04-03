@@ -89,8 +89,6 @@
 			this.h10 = new System.Windows.Forms.ListBox();
 			this.h11 = new System.Windows.Forms.ListBox();
 			this.h12 = new System.Windows.Forms.Label();
-			this.panel1 = new System.Windows.Forms.Panel();
-			this.label1 = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.contactactivatebox)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.languageactivatebox)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.scoreboardactivatebox)).BeginInit();
@@ -113,7 +111,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.h6)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.h7)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.h8)).BeginInit();
-			this.panel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// contactactivatelabel
@@ -933,32 +930,12 @@
 			this.h12.TabIndex = 26;
 			this.h12.Text = "(Current)";
 			// 
-			// panel1
-			// 
-			this.panel1.Controls.Add(this.label1);
-			this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel1.Location = new System.Drawing.Point(250, 46);
-			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(1034, 565);
-			this.panel1.TabIndex = 27;
-			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-			this.label1.Location = new System.Drawing.Point(175, 174);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(801, 24);
-			this.label1.TabIndex = 0;
-			this.label1.Text = "KANKA BU PANELİN İÇİNE YERLEŞTİRECEKSİN SADECE OKADAR KOLAY GELSİN";
-			// 
 			// QuizApplication
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.ButtonShadow;
 			this.ClientSize = new System.Drawing.Size(1284, 611);
-			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.h12);
 			this.Controls.Add(this.h11);
 			this.Controls.Add(this.h10);
@@ -1013,8 +990,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.h6)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.h7)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.h8)).EndInit();
-			this.panel1.ResumeLayout(false);
-			this.panel1.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -1080,8 +1055,6 @@
 		private System.Windows.Forms.ListBox h11;
 		private System.Windows.Forms.ListBox h10;
 		private System.Windows.Forms.Label h12;
-		private System.Windows.Forms.Panel panel1;
-		private System.Windows.Forms.Label label1;
 	}
 }
 
