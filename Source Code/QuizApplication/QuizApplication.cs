@@ -46,13 +46,12 @@ namespace QuizApplication
         {
             lblquest.Text = counter.ToString();
             lblanswer.Visible = false;
+            quizlistpanel.Visible = false;
 
         }
 
         SqlConnection a = new SqlConnection("Data Source=HUZEYFE\\SQLEXPRESS;Initial Catalog=QuizApp;Integrated Security=True");
-        int counter = 0;
-        int score = 0;
-        int time = 20;
+        
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -437,9 +436,13 @@ namespace QuizApplication
 
         }
 
+        int counter = 0;
+        int score = 0;
+        int time = 20;
+
         private void button5_Click(object sender, EventArgs e)
         {
-            timer1.Enabled = true;
+            timer2.Enabled = true;
             time = 20;
 
             button1.BackColor = Color.LightGray;
@@ -582,7 +585,7 @@ namespace QuizApplication
                 button4.Enabled = false;
                 textBox1.Clear();
                 textBox1.Enabled = false;
-                timer1.Enabled = false;
+                timer2.Enabled = false;
 
                 MessageBox.Show("YOUR SCORE İS:" + score);
             }
@@ -667,6 +670,8 @@ namespace QuizApplication
             button4.Enabled = false;
         }
 
+        
+
         private void timer2_Tick(object sender, EventArgs e)
         {
             time = time - 1;
@@ -677,7 +682,7 @@ namespace QuizApplication
                 lbltime.Text = time.ToString();
                 if (time == 0)
                 {
-                    timer1.Enabled = false;
+                    timer2.Enabled = false;
 
                     button1.Enabled = false;
                     button2.Enabled = false;
@@ -686,6 +691,16 @@ namespace QuizApplication
 
                 }
             }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbltime_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

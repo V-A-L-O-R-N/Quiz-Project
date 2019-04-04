@@ -728,6 +728,7 @@
             this.lbltime.Size = new System.Drawing.Size(18, 20);
             this.lbltime.TabIndex = 39;
             this.lbltime.Text = "0";
+            this.lbltime.Click += new System.EventHandler(this.lbltime_Click);
             // 
             // label2
             // 
@@ -738,6 +739,7 @@
             this.label2.Size = new System.Drawing.Size(47, 20);
             this.label2.TabIndex = 38;
             this.label2.Text = "TIME";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // textBox1
             // 
