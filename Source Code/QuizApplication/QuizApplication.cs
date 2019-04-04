@@ -678,10 +678,7 @@ namespace QuizApplication
             lbltime.Text = time.ToString();
             if (time == 0)
             {
-                time = time - 1;
-                lbltime.Text = time.ToString();
-                if (time == 0)
-                {
+               
                     timer2.Enabled = false;
 
                     button1.Enabled = false;
@@ -689,7 +686,9 @@ namespace QuizApplication
                     button3.Enabled = false;
                     button4.Enabled = false;
 
-                }
+                    
+
+                
             }
         }
 
