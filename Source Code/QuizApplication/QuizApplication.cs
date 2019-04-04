@@ -50,7 +50,7 @@ namespace QuizApplication
 
         }
 
-        SqlConnection a = new SqlConnection("Data Source=HUZEYFE\\SQLEXPRESS;Initial Catalog=QuizApp;Integrated Security=True");
+        SqlConnection a = new SqlConnection("Data Source=C:\\Users\theva\\Desktop\\Quiz Application (Pre-alpha)\\Quiz-Project\\QuizAPP-Database;Initial Catalog=QuizApp;Integrated Security=True");
         
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -72,22 +72,7 @@ namespace QuizApplication
             timer1.Start();
         }
 
-        private void maximizebox_Click(object sender, EventArgs e)
-        {
-            //maximizebox
-            maximizebox.Visible = false;
-            minimizebox.Visible = true;
-            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
-            this.WindowState = FormWindowState.Maximized;
-        }
-
-        private void minimizebox_Click(object sender, EventArgs e)
-        {
-            //minimizebox
-            this.WindowState = FormWindowState.Normal;
-            maximizebox.Visible = true;
-            minimizebox.Visible = false;
-        }
+       
 
         private void dropminbox_Click(object sender, EventArgs e)
         {
@@ -202,7 +187,8 @@ namespace QuizApplication
         {
 
             quizlistpanel.Visible = false;
-
+			languagemaintain.Visible = false;
+			scoreboardmaintain.Visible = false;
             welcome.Visible = false;
             h1.Visible = true;
             h2.Visible = true;
@@ -243,16 +229,19 @@ namespace QuizApplication
             languageactivatelabel.Visible = false;
             contactactivatebox.Visible = false;
             contactactivatelabel.Visible = false;
+			scoreboardwip.Visible = false;
+			languagewip.Visible = false;
 
-
-        }
+		}
 
         private void quizlistbutton_Click_1(object sender, EventArgs e)
         {
-
-            quizlistpanel.Visible = true;
-
-            welcome.Visible = false;
+			scoreboardwip.Visible = false;
+			languagewip.Visible = false;
+			quizlistpanel.Visible = true;
+			languagemaintain.Visible = false;
+			scoreboardmaintain.Visible = false;
+			welcome.Visible = false;
             h1.Visible = false;
             h2.Visible = false;
             h3.Visible = false;
@@ -292,9 +281,12 @@ namespace QuizApplication
 
         private void scoreboardbutton_Click_1(object sender, EventArgs e)
         {
-
-
-            h1.Visible = false;
+			languagemaintain.Visible = false;
+			scoreboardmaintain.Visible = true;
+			languagewip.Visible = false;
+			scoreboardwip.Visible = true;
+			quizlistpanel.Visible = false;
+			h1.Visible = false;
             h2.Visible = false;
             h3.Visible = false;
             h4.Visible = false;
@@ -334,7 +326,12 @@ namespace QuizApplication
         private void languagebutton_Click_1(object sender, EventArgs e)
         {
             welcome.Visible = false;
-            h1.Visible = false;
+			quizlistpanel.Visible = false;
+			scoreboardwip.Visible = false;
+			languagemaintain.Visible = true;
+			scoreboardmaintain.Visible = false;
+			languagewip.Visible = true;
+			h1.Visible = false;
             h2.Visible = false;
             h3.Visible = false;
             h4.Visible = false;
@@ -370,9 +367,13 @@ namespace QuizApplication
 
         private void contactbutton_Click_1(object sender, EventArgs e)
         {
-            welcome.Visible = false;
-
-            h1.Visible = false;
+			languagemaintain.Visible = false;
+			scoreboardmaintain.Visible = false;
+			scoreboardwip.Visible = false;
+			languagewip.Visible = false;
+			welcome.Visible = false;
+			quizlistpanel.Visible = false;
+			h1.Visible = false;
             h2.Visible = false;
             h3.Visible = false;
             h4.Visible = false;
@@ -702,6 +703,26 @@ namespace QuizApplication
         {
 
         }
-    }
+
+		private void quizlistpanel_Paint_1(object sender, PaintEventArgs e)
+		{
+
+		}
+
+		private void scoreboardmaintain_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void quizlistpanel_Paint_2(object sender, PaintEventArgs e)
+		{
+
+		}
+
+		private void scoreboardmaintain_Click_1(object sender, EventArgs e)
+		{
+
+		}
+	}
 
 }
