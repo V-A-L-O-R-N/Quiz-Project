@@ -33,3 +33,14 @@ C:\Users\theva\Desktop\Quiz Application (Pre-alpha)\Quiz-Project\Source Code\Qui
 C:\Users\theva\Desktop\Quiz Application (Pre-alpha)\Quiz-Project\Source Code\QuizApplication\bin\Debug\QuizApplication.exe
 C:\Users\theva\Desktop\Quiz Application (Pre-alpha)\Quiz-Project\Source Code\QuizApplication\bin\Debug\QuizApplication.pdb
 C:\Users\theva\Desktop\Quiz Application (Pre-alpha)\Quiz-Project\Source Code\QuizApplication\obj\Debug\QuizApplication.csproj.CopyComplete
+C:\Users\Huzeyfe\Desktop\Quiz-Project\Source Code\QuizApplication\bin\Debug\QuizApplication.exe.config
+C:\Users\Huzeyfe\Desktop\Quiz-Project\Source Code\QuizApplication\bin\Debug\QuizApplication.exe
+C:\Users\Huzeyfe\Desktop\Quiz-Project\Source Code\QuizApplication\bin\Debug\QuizApplication.pdb
+C:\Users\Huzeyfe\Desktop\Quiz-Project\Source Code\QuizApplication\obj\Debug\QuizApplication.csprojAssemblyReference.cache
+C:\Users\Huzeyfe\Desktop\Quiz-Project\Source Code\QuizApplication\obj\Debug\QuizApplication.QuizApplication.resources
+C:\Users\Huzeyfe\Desktop\Quiz-Project\Source Code\QuizApplication\obj\Debug\QuizApplication.Properties.Resources.resources
+C:\Users\Huzeyfe\Desktop\Quiz-Project\Source Code\QuizApplication\obj\Debug\QuizApplication.csproj.GenerateResource.cache
+C:\Users\Huzeyfe\Desktop\Quiz-Project\Source Code\QuizApplication\obj\Debug\QuizApplication.csproj.CoreCompileInputs.cache
+C:\Users\Huzeyfe\Desktop\Quiz-Project\Source Code\QuizApplication\obj\Debug\QuizApplication.csproj.CopyComplete
+C:\Users\Huzeyfe\Desktop\Quiz-Project\Source Code\QuizApplication\obj\Debug\QuizApplication.exe
+C:\Users\Huzeyfe\Desktop\Quiz-Project\Source Code\QuizApplication\obj\Debug\QuizApplication.pdb

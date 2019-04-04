@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace QuizApplication
 {
@@ -16,17 +17,21 @@ namespace QuizApplication
 
     {
 
-	
 
-	
+
+
 
         public QuizApplication()
         {
             InitializeComponent();
+            button1.Enabled = false;
+            button2.Enabled = false;
+            button3.Enabled = false;
+            button4.Enabled = false;
         }
         /// <summary>
         /// top movable mousehover
-       
+
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
 
@@ -39,10 +44,16 @@ namespace QuizApplication
 
         private void QuizApplication_Load(object sender, EventArgs e)
         {
-			
-			
-	    }
-		 
+            lblquest.Text = counter.ToString();
+            lblanswer.Visible = false;
+
+        }
+
+        SqlConnection a = new SqlConnection("Data Source=HUZEYFE\\SQLEXPRESS;Initial Catalog=QuizApp;Integrated Security=True");
+        int counter = 0;
+        int score = 0;
+        int time = 20;
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             ///timer opacity exitt
@@ -129,12 +140,12 @@ namespace QuizApplication
                 versionlabel.Visible = true;
                 homeactivatebox.Visible = false;
                 homeactivatelabel.Visible = false;
-                
+
 
 
             }
 
-            if(homebutton.selected)
+            if (homebutton.selected)
             {
                 homeactivatebox.Visible = true;
                 homeactivatelabel.Visible = true;
@@ -166,10 +177,10 @@ namespace QuizApplication
 
 
         }
-		
 
-        		
-      
+
+
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
@@ -185,236 +196,497 @@ namespace QuizApplication
 
         }
 
-        
+
 
 
         private void homebutton_Click_1(object sender, EventArgs e)
         {
-	
 
-			welcome.Visible = false;
-			h1.Visible = true;
-			h2.Visible = true;
-			h3.Visible = true;
-			h4.Visible = true;
-			h5.Visible = true;
-			h6.Visible = true;
-			h7.Visible = true;
-			h8.Visible = true;
-			h9.Visible = true;
-			h10.Visible = true;
-			h11.Visible = true;
-			h12.Visible = true;
+            quizlistpanel.Visible = false;
 
-			c1.Visible = false;
-			c2.Visible = false;
-			c3.Visible = false;
-			c4.Visible = false;
-			c5.Visible = false;
-			c6.Visible = false;
-			c7.Visible = false;
-			c8.Visible = false;
+            welcome.Visible = false;
+            h1.Visible = true;
+            h2.Visible = true;
+            h3.Visible = true;
+            h4.Visible = true;
+            h5.Visible = true;
+            h6.Visible = true;
+            h7.Visible = true;
+            h8.Visible = true;
+            h9.Visible = true;
+            h10.Visible = true;
+            h11.Visible = true;
+            h12.Visible = true;
 
-			homeactivatelabel.Visible = true;
-           
+            c1.Visible = false;
+            c2.Visible = false;
+            c3.Visible = false;
+            c4.Visible = false;
+            c5.Visible = false;
+            c6.Visible = false;
+            c7.Visible = false;
+            c8.Visible = false;
+
+            homeactivatelabel.Visible = true;
+
             quizactivatelabel.Visible = false;
-            
 
 
-            
-                homeactivatebox.Visible = true;
-                homeactivatelabel.Visible = true;
-                quizactivatebox.Visible = false;
-                quizactivatelabel.Visible = false;
-                scoreboardactivatebox.Visible = false;
-                scoreboardactivatelabel.Visible = false;
-                languageactivatebox.Visible = false;
-                languageactivatelabel.Visible = false;
-                contactactivatebox.Visible = false;
-                contactactivatelabel.Visible = false;
-            
+
+
+            homeactivatebox.Visible = true;
+            homeactivatelabel.Visible = true;
+            quizactivatebox.Visible = false;
+            quizactivatelabel.Visible = false;
+            scoreboardactivatebox.Visible = false;
+            scoreboardactivatelabel.Visible = false;
+            languageactivatebox.Visible = false;
+            languageactivatelabel.Visible = false;
+            contactactivatebox.Visible = false;
+            contactactivatelabel.Visible = false;
+
 
         }
 
         private void quizlistbutton_Click_1(object sender, EventArgs e)
         {
+
+            quizlistpanel.Visible = true;
+
             welcome.Visible = false;
-			h1.Visible = false;
-			h2.Visible = false;
-			h3.Visible = false;
-			h4.Visible = false;
-			h5.Visible = false;
-			h6.Visible = false;
-			h7.Visible = false;
-			h8.Visible = false;
-			h9.Visible = false;
-			h10.Visible = false;
-			h11.Visible = false;
-			h12.Visible = false;
+            h1.Visible = false;
+            h2.Visible = false;
+            h3.Visible = false;
+            h4.Visible = false;
+            h5.Visible = false;
+            h6.Visible = false;
+            h7.Visible = false;
+            h8.Visible = false;
+            h9.Visible = false;
+            h10.Visible = false;
+            h11.Visible = false;
+            h12.Visible = false;
 
-			c1.Visible = false;
-			c2.Visible = false;
-			c3.Visible = false;
-			c4.Visible = false;
-			c5.Visible = false;
-			c6.Visible = false;
-			c7.Visible = false;
-			c8.Visible = false;
+            c1.Visible = false;
+            c2.Visible = false;
+            c3.Visible = false;
+            c4.Visible = false;
+            c5.Visible = false;
+            c6.Visible = false;
+            c7.Visible = false;
+            c8.Visible = false;
 
 
-			homeactivatebox.Visible = false;
-                homeactivatelabel.Visible = false;
-                quizactivatebox.Visible = true;
-                quizactivatelabel.Visible = true;
-                scoreboardactivatebox.Visible = false;
-                scoreboardactivatelabel.Visible = false;
-                languageactivatebox.Visible = false;
-                languageactivatelabel.Visible = false;
-                contactactivatebox.Visible = false;
-                contactactivatelabel.Visible = false;
-             
-            
+            homeactivatebox.Visible = false;
+            homeactivatelabel.Visible = false;
+            quizactivatebox.Visible = true;
+            quizactivatelabel.Visible = true;
+            scoreboardactivatebox.Visible = false;
+            scoreboardactivatelabel.Visible = false;
+            languageactivatebox.Visible = false;
+            languageactivatelabel.Visible = false;
+            contactactivatebox.Visible = false;
+            contactactivatelabel.Visible = false;
+
+            quizlistpanel.BringToFront();
         }
 
         private void scoreboardbutton_Click_1(object sender, EventArgs e)
         {
 
 
-			h1.Visible = false;
-			h2.Visible = false;
-			h3.Visible = false;
-			h4.Visible = false;
-			h5.Visible = false;
-			h6.Visible = false;
-			h7.Visible = false;
-			h8.Visible = false;
-			h9.Visible = false;
-			h10.Visible = false;
-			h11.Visible = false;
-			h12.Visible = false;
-			c1.Visible = false;
-			c2.Visible = false;
-			c3.Visible = false;
-			c4.Visible = false;
-			c5.Visible = false;
-			c6.Visible = false;
-			c7.Visible = false;
-			c8.Visible = false;
-			welcome.Visible = false;
-         
-            
+            h1.Visible = false;
+            h2.Visible = false;
+            h3.Visible = false;
+            h4.Visible = false;
+            h5.Visible = false;
+            h6.Visible = false;
+            h7.Visible = false;
+            h8.Visible = false;
+            h9.Visible = false;
+            h10.Visible = false;
+            h11.Visible = false;
+            h12.Visible = false;
+            c1.Visible = false;
+            c2.Visible = false;
+            c3.Visible = false;
+            c4.Visible = false;
+            c5.Visible = false;
+            c6.Visible = false;
+            c7.Visible = false;
+            c8.Visible = false;
+            welcome.Visible = false;
 
-                homeactivatebox.Visible = false;
-                homeactivatelabel.Visible = false;
-                quizactivatebox.Visible = false;
-                quizactivatelabel.Visible = false;
-                scoreboardactivatebox.Visible = true;
-                scoreboardactivatelabel.Visible = true;
-                languageactivatebox.Visible = false;
-                languageactivatelabel.Visible = false;
-                contactactivatebox.Visible = false;
-                contactactivatelabel.Visible = false;
-            
+
+
+            homeactivatebox.Visible = false;
+            homeactivatelabel.Visible = false;
+            quizactivatebox.Visible = false;
+            quizactivatelabel.Visible = false;
+            scoreboardactivatebox.Visible = true;
+            scoreboardactivatelabel.Visible = true;
+            languageactivatebox.Visible = false;
+            languageactivatelabel.Visible = false;
+            contactactivatebox.Visible = false;
+            contactactivatelabel.Visible = false;
+
         }
 
         private void languagebutton_Click_1(object sender, EventArgs e)
         {
             welcome.Visible = false;
-			h1.Visible = false;
-			h2.Visible = false;
-			h3.Visible = false;
-			h4.Visible = false;
-			h5.Visible = false;
-			h6.Visible = false;
-			h7.Visible = false;
-			h8.Visible = false;
-			h9.Visible = false;
-			h10.Visible = false;
-			h11.Visible = false;
-			h12.Visible = false;
-			c1.Visible = false;
-			c2.Visible = false;
-			c3.Visible = false;
-			c4.Visible = false;
-			c5.Visible = false;
-			c6.Visible = false;
-			c7.Visible = false;
-			c8.Visible = false;
+            h1.Visible = false;
+            h2.Visible = false;
+            h3.Visible = false;
+            h4.Visible = false;
+            h5.Visible = false;
+            h6.Visible = false;
+            h7.Visible = false;
+            h8.Visible = false;
+            h9.Visible = false;
+            h10.Visible = false;
+            h11.Visible = false;
+            h12.Visible = false;
+            c1.Visible = false;
+            c2.Visible = false;
+            c3.Visible = false;
+            c4.Visible = false;
+            c5.Visible = false;
+            c6.Visible = false;
+            c7.Visible = false;
+            c8.Visible = false;
 
-			homeactivatebox.Visible = false;
-                homeactivatelabel.Visible = false;
-                quizactivatebox.Visible = false;
-                quizactivatelabel.Visible = false;
-                scoreboardactivatebox.Visible = false;
-                scoreboardactivatelabel.Visible = false;
-                languageactivatebox.Visible = true;
-                languageactivatelabel.Visible = true;
-                contactactivatebox.Visible = false;
-                contactactivatelabel.Visible = false;
-            
+            homeactivatebox.Visible = false;
+            homeactivatelabel.Visible = false;
+            quizactivatebox.Visible = false;
+            quizactivatelabel.Visible = false;
+            scoreboardactivatebox.Visible = false;
+            scoreboardactivatelabel.Visible = false;
+            languageactivatebox.Visible = true;
+            languageactivatelabel.Visible = true;
+            contactactivatebox.Visible = false;
+            contactactivatelabel.Visible = false;
+
         }
 
         private void contactbutton_Click_1(object sender, EventArgs e)
         {
             welcome.Visible = false;
 
-			h1.Visible = false;
-			h2.Visible = false;
-			h3.Visible = false;
-			h4.Visible = false;
-			h5.Visible = false;
-			h6.Visible = false;
-			h7.Visible = false;
-			h8.Visible = false;
-			h9.Visible = false;
-			h10.Visible = false;
-			h11.Visible = false;
-			h12.Visible = false;
-			c1.Visible = true;
-			c2.Visible = true;
-			c3.Visible = true;
-			c4.Visible = true;
-			c5.Visible = true;
-			c6.Visible = true;
-			c7.Visible = true;
-			c8.Visible = true;
+            h1.Visible = false;
+            h2.Visible = false;
+            h3.Visible = false;
+            h4.Visible = false;
+            h5.Visible = false;
+            h6.Visible = false;
+            h7.Visible = false;
+            h8.Visible = false;
+            h9.Visible = false;
+            h10.Visible = false;
+            h11.Visible = false;
+            h12.Visible = false;
+            c1.Visible = true;
+            c2.Visible = true;
+            c3.Visible = true;
+            c4.Visible = true;
+            c5.Visible = true;
+            c6.Visible = true;
+            c7.Visible = true;
+            c8.Visible = true;
 
-			homeactivatebox.Visible = false;
-                homeactivatelabel.Visible = false;
-                quizactivatebox.Visible = false;
-                quizactivatelabel.Visible = false;
-                scoreboardactivatebox.Visible = false;
-                scoreboardactivatelabel.Visible = false;
-                languageactivatebox.Visible = false;
-                languageactivatelabel.Visible = false;
-                contactactivatebox.Visible = true;
-                contactactivatelabel.Visible = true;
-               
-            
+            homeactivatebox.Visible = false;
+            homeactivatelabel.Visible = false;
+            quizactivatebox.Visible = false;
+            quizactivatelabel.Visible = false;
+            scoreboardactivatebox.Visible = false;
+            scoreboardactivatelabel.Visible = false;
+            languageactivatebox.Visible = false;
+            languageactivatelabel.Visible = false;
+            contactactivatebox.Visible = true;
+            contactactivatelabel.Visible = true;
+
+
         }
 
-		private void a_Paint(object sender, PaintEventArgs e)
-		{
+        private void a_Paint(object sender, PaintEventArgs e)
+        {
 
-		}
+        }
 
-		private void label1_Click(object sender, EventArgs e)
-		{
+        private void label1_Click(object sender, EventArgs e)
+        {
 
-		}
+        }
 
-		private void c5_Click(object sender, EventArgs e)
-		{
-			string name = c8.Text;
-			string email = c7.Text;
-			string message = c6.Text;
+        private void c5_Click(object sender, EventArgs e)
+        {
+            string name = c8.Text;
+            string email = c7.Text;
+            string message = c6.Text;
 
-			MessageBox.Show("Thank You For Your Sumbit    " + "--" + name + "--" );
-		}
+            MessageBox.Show("Thank You For Your Sumbit    " + "--" + name + "--");
+        }
 
-		private void h2_Click(object sender, EventArgs e)
-		{
+        private void h2_Click(object sender, EventArgs e)
+        {
 
-		}
-	}
+        }
+
+        private void quizlistpanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            timer1.Enabled = true;
+            time = 20;
+
+            button1.BackColor = Color.LightGray;
+            button2.BackColor = Color.LightGray;
+            button3.BackColor = Color.LightGray;
+            button4.BackColor = Color.LightGray;
+
+            button5.Enabled = false;
+
+            button1.Enabled = true;
+            button2.Enabled = true;
+            button3.Enabled = true;
+            button4.Enabled = true;
+
+            button5.Text = "NEXT";
+
+            counter++;
+            lblquest.Text = counter.ToString();
+
+            if (counter == 1)
+
+            {
+                a.Open();
+
+                SqlCommand b = new SqlCommand("Select * from quest1 order by NEWID()", a);
+
+                SqlDataReader read = b.ExecuteReader();
+
+                while (read.Read())
+                {
+                    button1.Text = (read["a"].ToString());
+                    button2.Text = (read["b"].ToString());
+                    button3.Text = (read["c"].ToString());
+                    button4.Text = (read["d"].ToString());
+                    textBox1.Text = (read["Question"].ToString());
+                    lblanswer.Text = (read["True"].ToString());
+                }
+
+                a.Close();
+            }
+
+            if (counter == 2)
+
+            {
+                a.Open();
+
+                SqlCommand b = new SqlCommand("Select * from quest2 order by NEWID()", a);
+
+                SqlDataReader read = b.ExecuteReader();
+
+                while (read.Read())
+                {
+                    button1.Text = (read["a"].ToString());
+                    button2.Text = (read["b"].ToString());
+                    button3.Text = (read["c"].ToString());
+                    button4.Text = (read["d"].ToString());
+                    textBox1.Text = (read["Question"].ToString());
+                    lblanswer.Text = (read["True"].ToString());
+                }
+
+                a.Close();
+            }
+
+            if (counter == 3)
+
+            {
+                a.Open();
+
+                SqlCommand b = new SqlCommand("Select * from quest3 order by NEWID()", a);
+
+                SqlDataReader read = b.ExecuteReader();
+
+                while (read.Read())
+                {
+                    button1.Text = (read["a"].ToString());
+                    button2.Text = (read["b"].ToString());
+                    button3.Text = (read["c"].ToString());
+                    button4.Text = (read["d"].ToString());
+                    textBox1.Text = (read["Question"].ToString());
+                    lblanswer.Text = (read["True"].ToString());
+                }
+
+                a.Close();
+            }
+
+            if (counter == 4)
+
+            {
+                a.Open();
+
+                SqlCommand b = new SqlCommand("Select * from quest4 order by NEWID()", a);
+
+                SqlDataReader read = b.ExecuteReader();
+
+                while (read.Read())
+                {
+                    button1.Text = (read["a"].ToString());
+                    button2.Text = (read["b"].ToString());
+                    button3.Text = (read["c"].ToString());
+                    button4.Text = (read["d"].ToString());
+                    textBox1.Text = (read["Question"].ToString());
+                    lblanswer.Text = (read["True"].ToString());
+                }
+
+                a.Close();
+            }
+
+            if (counter == 5)
+
+            {
+
+
+                a.Open();
+
+                SqlCommand b = new SqlCommand("Select * from quest5 order by NEWID()", a);
+
+                SqlDataReader read = b.ExecuteReader();
+
+                while (read.Read())
+                {
+                    button1.Text = (read["a"].ToString());
+                    button2.Text = (read["b"].ToString());
+                    button3.Text = (read["c"].ToString());
+                    button4.Text = (read["d"].ToString());
+                    textBox1.Text = (read["Question"].ToString());
+                    lblanswer.Text = (read["True"].ToString());
+                }
+
+                a.Close();
+            }
+
+            if (counter == 6)
+            {
+                lblquest.Text = "FİNİSH";
+                button5.Enabled = false;
+                button5.Text = "GAME OVER";
+                button1.Enabled = false;
+                button2.Enabled = false;
+                button3.Enabled = false;
+                button4.Enabled = false;
+                textBox1.Clear();
+                textBox1.Enabled = false;
+                timer1.Enabled = false;
+
+                MessageBox.Show("YOUR SCORE İS:" + score);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (button1.Text == lblanswer.Text)
+            {
+                score = score + 10;
+                lblscore.Text = score.ToString();
+                button1.BackColor = Color.Green;
+            }
+            else
+            {
+                button1.BackColor = Color.Red;
+            }
+            button5.Enabled = true;
+            button1.Enabled = false;
+            button2.Enabled = false;
+            button3.Enabled = false;
+            button4.Enabled = false;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (button2.Text == lblanswer.Text)
+            {
+                score = score + 10;
+                lblscore.Text = score.ToString();
+                button2.BackColor = Color.Green;
+            }
+            else
+            {
+                button2.BackColor = Color.Red;
+            }
+
+            button5.Enabled = true;
+            button1.Enabled = false;
+            button2.Enabled = false;
+            button3.Enabled = false;
+            button4.Enabled = false;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (button3.Text == lblanswer.Text)
+            {
+                score = score + 10;
+                lblscore.Text = score.ToString();
+                button3.BackColor = Color.Green;
+            }
+            else
+            {
+                button3.BackColor = Color.Red;
+            }
+
+            button5.Enabled = true;
+            button1.Enabled = false;
+            button2.Enabled = false;
+            button3.Enabled = false;
+            button4.Enabled = false;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (button4.Text == lblanswer.Text)
+            {
+                score = score + 10;
+                lblscore.Text = score.ToString();
+                button4.BackColor = Color.Green;
+            }
+            else
+            {
+                button4.BackColor = Color.Red;
+            }
+
+            button5.Enabled = true;
+            button1.Enabled = false;
+            button2.Enabled = false;
+            button3.Enabled = false;
+            button4.Enabled = false;
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            time = time - 1;
+            lbltime.Text = time.ToString();
+            if (time == 0)
+            {
+                time = time - 1;
+                lbltime.Text = time.ToString();
+                if (time == 0)
+                {
+                    timer1.Enabled = false;
+
+                    button1.Enabled = false;
+                    button2.Enabled = false;
+                    button3.Enabled = false;
+                    button4.Enabled = false;
+
+                }
+            }
+        }
+    }
+
 }
