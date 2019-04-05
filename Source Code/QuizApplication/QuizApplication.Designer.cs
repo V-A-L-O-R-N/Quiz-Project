@@ -646,7 +646,7 @@
 			this.versionlabel.Name = "versionlabel";
 			this.versionlabel.Size = new System.Drawing.Size(28, 13);
 			this.versionlabel.TabIndex = 9;
-			this.versionlabel.Text = "v0.1";
+			this.versionlabel.Text = "v1.0";
 			// 
 			// logobox
 			// 
