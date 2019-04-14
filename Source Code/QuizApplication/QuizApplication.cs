@@ -20,6 +20,8 @@ namespace QuizApplication
             button2.Enabled = false;
             button3.Enabled = false;
             button4.Enabled = false;
+            lblanswer1.Visible = false;
+            
         }
         
         ///REFERENCE MOVABLE TOP SECTİON
@@ -35,11 +37,11 @@ namespace QuizApplication
         {
             lblquest.Text = counter.ToString();
             lblanswer.Visible = false;
-            quizlistpanel.Visible = false;
+            quiz1panel.Visible = false;
         }
 		
 		/// DATABASE CONNECTİON	
-		SqlConnection a = new SqlConnection("Data Source=C:\\Users\theva\\Desktop\\Quiz Application (Pre-alpha)\\Quiz-Project\\QuizAPP-Database;Initial Catalog=QuizApp;Integrated Security=True");
+		SqlConnection a = new SqlConnection("Data Source=HUZEYFE\\SQLEXPRESS;Initial Catalog=QuizApp;Integrated Security=True");
 
 		/// EXİT OPACİTİY TİMER
 		private void timer1_Tick(object sender, EventArgs e)
@@ -167,7 +169,7 @@ namespace QuizApplication
 		//HOME BUTTON
 		private void homebutton_Click_1(object sender, EventArgs e)
         {
-            quizlistpanel.Visible = false;
+            quiz1panel.Visible = false;
 			languagemaintain.Visible = false;
 			scoreboardmaintain.Visible = false;
             welcome.Visible = false;
@@ -210,10 +212,12 @@ namespace QuizApplication
 		//QUİZ LİST BUTTON
         private void quizlistbutton_Click_1(object sender, EventArgs e)
         {
-			scoreboardwip.Visible = false;
-			languagewip.Visible = false;
-			quizlistpanel.Visible = true;
-			languagemaintain.Visible = false;
+            quiz1panel.Visible = true;
+            quiz2panel.Visible = true;
+            quizmenupanel.Visible = true;         
+            scoreboardwip.Visible = false;
+			languagewip.Visible = false;                     
+            languagemaintain.Visible = false;
 			scoreboardmaintain.Visible = false;
 			welcome.Visible = false;
             h1.Visible = false;
@@ -246,7 +250,7 @@ namespace QuizApplication
             languageactivatelabel.Visible = false;
             contactactivatebox.Visible = false;
             contactactivatelabel.Visible = false;
-            quizlistpanel.BringToFront();
+            quiz1panel.BringToFront();
         }
 
 		//SCOREBOARD BUTTON
@@ -256,7 +260,7 @@ namespace QuizApplication
 			scoreboardmaintain.Visible = true;
 			languagewip.Visible = false;
 			scoreboardwip.Visible = true;
-			quizlistpanel.Visible = false;
+			quiz1panel.Visible = false;
 			h1.Visible = false;
             h2.Visible = false;
             h3.Visible = false;
@@ -294,7 +298,7 @@ namespace QuizApplication
         private void languagebutton_Click_1(object sender, EventArgs e)
         {
             welcome.Visible = false;
-			quizlistpanel.Visible = false;
+			quiz1panel.Visible = false;
 			scoreboardwip.Visible = false;
 			languagemaintain.Visible = true;
 			scoreboardmaintain.Visible = false;
@@ -331,6 +335,7 @@ namespace QuizApplication
             contactactivatelabel.Visible = false;
         }
 
+        //CONTACT BUTTON
         private void contactbutton_Click_1(object sender, EventArgs e)
         {
 			languagemaintain.Visible = false;
@@ -338,7 +343,7 @@ namespace QuizApplication
 			scoreboardwip.Visible = false;
 			languagewip.Visible = false;
 			welcome.Visible = false;
-			quizlistpanel.Visible = false;
+			quiz1panel.Visible = false;
 			h1.Visible = false;
             h2.Visible = false;
             h3.Visible = false;
@@ -393,26 +398,25 @@ namespace QuizApplication
 			///EMPTY
 		}
 
-
+        //FIRST QUIZ GAME
         int counter = 0;
         int score = 0;
         int time = 20;
-
-		//QUİZ LİST PANEL DATABASE EXECUTİON
-        private void button5_Click(object sender, EventArgs e)
+		              
+        private void button5_Click_1(object sender, EventArgs e)
         {
             timer2.Enabled = true;
             time = 20;
-            button1.BackColor = Color.LightGray;
-            button2.BackColor = Color.LightGray;
-            button3.BackColor = Color.LightGray;
-            button4.BackColor = Color.LightGray;
-            button5.Enabled = false;
+            button1.BackColor = Color.DarkBlue;
+            button2.BackColor = Color.DarkBlue;
+            button3.BackColor = Color.DarkBlue;
+            button4.BackColor = Color.DarkBlue;
+            btnstart.Enabled = false;
             button1.Enabled = true;
             button2.Enabled = true;
             button3.Enabled = true;
             button4.Enabled = true;
-            button5.Text = "NEXT";
+            btnstart.Text = "NEXT";
             counter++;
             lblquest.Text = counter.ToString();
             if (counter == 1)
@@ -505,8 +509,8 @@ namespace QuizApplication
             if (counter == 6)
             {
                 lblquest.Text = "FİNİSH";
-                button5.Enabled = false;
-                button5.Text = "GAME OVER";
+                btnstart.Enabled = false;
+                btnstart.Text = "GAME OVER";
                 button1.Enabled = false;
                 button2.Enabled = false;
                 button3.Enabled = false;
@@ -518,8 +522,7 @@ namespace QuizApplication
             }
         }
 
-		//QUİZ LİST PANEL DATABASE EXECUTİON 2
-		private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             if (button1.Text == lblanswer.Text)
             {
@@ -531,7 +534,7 @@ namespace QuizApplication
             {
                 button1.BackColor = Color.Red;
             }
-            button5.Enabled = true;
+            btnstart.Enabled = true;
             button1.Enabled = false;
             button2.Enabled = false;
             button3.Enabled = false;
@@ -551,13 +554,13 @@ namespace QuizApplication
                 button2.BackColor = Color.Red;
             }
 
-            button5.Enabled = true;
+            btnstart.Enabled = true;
             button1.Enabled = false;
             button2.Enabled = false;
             button3.Enabled = false;
             button4.Enabled = false;
         }
-
+               
         private void button3_Click(object sender, EventArgs e)
         {
             if (button3.Text == lblanswer.Text)
@@ -571,7 +574,7 @@ namespace QuizApplication
                 button3.BackColor = Color.Red;
             }
 
-            button5.Enabled = true;
+            btnstart.Enabled = true;
             button1.Enabled = false;
             button2.Enabled = false;
             button3.Enabled = false;
@@ -591,14 +594,12 @@ namespace QuizApplication
                 button4.BackColor = Color.Red;
             }
 
-            button5.Enabled = true;
+            btnstart.Enabled = true;
             button1.Enabled = false;
             button2.Enabled = false;
             button3.Enabled = false;
             button4.Enabled = false;
         }
-
-        
 
         private void timer2_Tick(object sender, EventArgs e)
         {
@@ -612,7 +613,7 @@ namespace QuizApplication
                     button2.Enabled = false;
                     button3.Enabled = false;
                     button4.Enabled = false;
-                    button5.Enabled = true;                           
+                    btnstart.Enabled = true;                           
             }
         }
 
@@ -645,6 +646,145 @@ namespace QuizApplication
 		{
 			//EMPTY
 		}
-	}
+
+        private void quizlistpanel_Paint(object sender, PaintEventArgs e)
+        {
+            //EMPTY
+        }
+
+        //QUİZ MENU PANEL
+        private void btnquiz1_Click(object sender, EventArgs e)
+        {
+            quizmenupanel.Visible = false;
+            quiz2panel.Visible = false;
+        }
+        
+        private void btnquiz2_Click(object sender, EventArgs e)
+        {
+            quizmenupanel.Visible = false;           
+            quiz2panel.Visible = true;
+        }
+
+        //SECOND QUIZ GAME 
+        int counter1 = 0;
+        int score1 = 0;
+        int time1 = 21;
+        private void btnstart1_Click(object sender, EventArgs e)
+        {
+            time1 = 21;
+            timer3.Enabled = true;
+                btnstart1.Text = "NEXT";
+                counter1++;
+                lblcounter1.Text = counter1.ToString();
+                btnstart1.Enabled = false;
+                a.Open();
+                SqlCommand c = new SqlCommand("Select * from quiz2value1 order by NEWID()", a);
+                SqlDataReader readc = c.ExecuteReader();
+                while (readc.Read())
+                {
+                    lblvalue1.Text = (readc["value"].ToString());
+
+
+                }
+                a.Close();
+
+                a.Open();
+                SqlCommand d = new SqlCommand("Select * from quiz2arop order by NEWID()", a);
+                SqlDataReader readd = d.ExecuteReader();
+                while (readd.Read())
+                {
+                    lblarop.Text = (readd["arop"].ToString());
+
+
+                }
+                a.Close();
+
+                a.Open();
+                SqlCommand g = new SqlCommand("Select * from quiz2value2 order by NEWID()", a);
+                SqlDataReader readg = g.ExecuteReader();
+                while (readg.Read())
+                {
+                    lblvalue2.Text = (readg["value2"].ToString());
+
+
+                }
+                a.Close();
+
+                float v1, v2, arop, sum;               
+                v1 = Convert.ToInt32(lblvalue1.Text);
+                v2 = Convert.ToInt32(lblvalue2.Text);                
+                arop = Convert.ToInt32(lblarop.Text);
+                if (arop == 1)
+                {
+                    lblarop.Text = "+";
+                    sum = v1 + v2;
+                    lblanswer1.Text = sum.ToString();
+
+                }
+                if (arop == 2)
+                {
+                    lblarop.Text = "-";
+                    sum = v1 - v2;
+                    lblanswer1.Text = sum.ToString();
+
+                }
+                if (arop == 3)
+                {
+                    lblarop.Text = "*";
+                    sum = v1 * v2;
+                    lblanswer1.Text = sum.ToString();
+
+                }
+                if (arop == 4)
+                {
+                    if(v2 == 0)
+
+                {
+                    v2 = 1;
+                    lblvalue2.Text = v2.ToString();
+
+                }
+                    lblarop.Text = "/";
+                    sum = v1 / v2;
+                    lblanswer1.Text = sum.ToString();
+                }
+                if(lblcounter1.Text == "6")
+                {
+                    btnstart1.Enabled = false;
+                    btncalculate.Enabled = false;
+                    btnstart1.Text = "GAME OVER";
+                    lblcounter1.Text = "GAME OVER";
+                    MessageBox.Show("YOUR SCORE İS:" + score1);
+                    
+                }
+        }
+
+        private void btncalculate_Click(object sender, EventArgs e)
+        {
+           
+            if (lblanswer1.Text == entervalue.Text)
+            {
+                score1 = score1 + 10;
+                lblscore1.Text = score1.ToString();                                               
+            }
+                entervalue.Clear();
+                btnstart1.Enabled = true;
+                timer3.Enabled = false;
+        }
+
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+            time1 = time1 - 1;
+            lbltime1.Text = time1.ToString();
+
+            if (time1 == 0)
+            {
+                timer3.Enabled = false;
+                btncalculate.Enabled = false;
+                btnstart1.Enabled = true;              
+            }
+            btncalculate.Enabled = true;
+        }
+    }
 
 }
