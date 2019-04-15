@@ -134,12 +134,7 @@ namespace QuizApplication
                 scoreboardactivatelabel.Visible = true;
             }
 
-            if (languagebutton.selected)
-            {
-                languageactivatebox.Visible = true;
-                languageactivatelabel.Visible = true;
-            }
-
+          
             if (contactbutton.selected)
             {
                 contactactivatebox.Visible = true;
@@ -785,6 +780,16 @@ namespace QuizApplication
             }
             btncalculate.Enabled = true;
         }
-    }
+
+		private void quizmenupanel_Paint(object sender, PaintEventArgs e)
+		{
+			//
+		}
+
+		private void h11_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			//
+		}
+	}
 
 }

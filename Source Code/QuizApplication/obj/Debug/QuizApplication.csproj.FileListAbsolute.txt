@@ -55,3 +55,4 @@ C:\Users\Huzeyfe\Desktop\Quiz-Project\Quiz-Project\Source Code\QuizApplication\o
 C:\Users\Huzeyfe\Desktop\Quiz-Project\Quiz-Project\Source Code\QuizApplication\obj\Debug\QuizApplication.csproj.CopyComplete
 C:\Users\Huzeyfe\Desktop\Quiz-Project\Quiz-Project\Source Code\QuizApplication\obj\Debug\QuizApplication.exe
 C:\Users\Huzeyfe\Desktop\Quiz-Project\Quiz-Project\Source Code\QuizApplication\obj\Debug\QuizApplication.pdb
+C:\Users\theva\Desktop\Quiz Application (Pre-alpha)\Quiz-Project\Source Code\QuizApplication\obj\Debug\QuizApplication.Splash.resources
