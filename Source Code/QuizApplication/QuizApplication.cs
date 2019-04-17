@@ -41,7 +41,7 @@ namespace QuizApplication
         }
 		
 		/// DATABASE CONNECTİON	
-		SqlConnection a = new SqlConnection("Data Source=HUZEYFE\\SQLEXPRESS;Initial Catalog=QuizApp;Integrated Security=True");
+		SqlConnection a = new SqlConnection("Data Source=DESKTOP-H6FI1AV;Initial Catalog=QuizApp;Integrated Security=True");
 
 		/// EXİT OPACİTİY TİMER
 		private void timer1_Tick(object sender, EventArgs e)
@@ -128,18 +128,9 @@ namespace QuizApplication
                 quizactivatelabel.Visible = true;
             }
 
-            if (scoreboardbutton.selected)
-            {
-                scoreboardactivatebox.Visible = true;
-                scoreboardactivatelabel.Visible = true;
-            }
+            
 
-            if (languagebutton.selected)
-            {
-                languageactivatebox.Visible = true;
-                languageactivatelabel.Visible = true;
-            }
-
+            
             if (contactbutton.selected)
             {
                 contactactivatebox.Visible = true;
@@ -170,9 +161,8 @@ namespace QuizApplication
 		private void homebutton_Click_1(object sender, EventArgs e)
         {
             quiz1panel.Visible = false;
-			languagemaintain.Visible = false;
-			scoreboardmaintain.Visible = false;
-            welcome.Visible = false;
+			quiz2panel.Visible = false;
+			welcome.Visible = false;
             h1.Visible = true;
             h2.Visible = true;
             h3.Visible = true;
@@ -205,8 +195,7 @@ namespace QuizApplication
             languageactivatelabel.Visible = false;
             contactactivatebox.Visible = false;
             contactactivatelabel.Visible = false;
-			scoreboardwip.Visible = false;
-			languagewip.Visible = false;
+			
 		}
 
 		//QUİZ LİST BUTTON
@@ -215,10 +204,7 @@ namespace QuizApplication
             quiz1panel.Visible = true;
             quiz2panel.Visible = true;
             quizmenupanel.Visible = true;         
-            scoreboardwip.Visible = false;
-			languagewip.Visible = false;                     
-            languagemaintain.Visible = false;
-			scoreboardmaintain.Visible = false;
+           
 			welcome.Visible = false;
             h1.Visible = false;
             h2.Visible = false;
@@ -256,10 +242,7 @@ namespace QuizApplication
 		//SCOREBOARD BUTTON
         private void scoreboardbutton_Click_1(object sender, EventArgs e)
         {
-			languagemaintain.Visible = false;
-			scoreboardmaintain.Visible = true;
-			languagewip.Visible = false;
-			scoreboardwip.Visible = true;
+			
 			quiz1panel.Visible = false;
 			h1.Visible = false;
             h2.Visible = false;
@@ -299,10 +282,7 @@ namespace QuizApplication
         {
             welcome.Visible = false;
 			quiz1panel.Visible = false;
-			scoreboardwip.Visible = false;
-			languagemaintain.Visible = true;
-			scoreboardmaintain.Visible = false;
-			languagewip.Visible = true;
+			
 			h1.Visible = false;
             h2.Visible = false;
             h3.Visible = false;
@@ -338,10 +318,7 @@ namespace QuizApplication
         //CONTACT BUTTON
         private void contactbutton_Click_1(object sender, EventArgs e)
         {
-			languagemaintain.Visible = false;
-			scoreboardmaintain.Visible = false;
-			scoreboardwip.Visible = false;
-			languagewip.Visible = false;
+			
 			welcome.Visible = false;
 			quiz1panel.Visible = false;
 			h1.Visible = false;
@@ -785,6 +762,26 @@ namespace QuizApplication
             }
             btncalculate.Enabled = true;
         }
-    }
+
+		private void quizmenupanel_Paint(object sender, PaintEventArgs e)
+		{
+			//
+		}
+
+		private void quiz1panel_Paint(object sender, PaintEventArgs e)
+		{
+			//
+		}
+
+		private void pictureBox2_Click(object sender, EventArgs e)
+		{
+			//
+		}
+
+		private void h8_Click(object sender, EventArgs e)
+		{
+			
+		}
+	}
 
 }
