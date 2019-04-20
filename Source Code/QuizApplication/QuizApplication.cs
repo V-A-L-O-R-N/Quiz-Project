@@ -242,85 +242,7 @@ namespace QuizApplication
             quiz1panel.BringToFront();
         }
 
-		//SCOREBOARD BUTTON
-        private void scoreboardbutton_Click_1(object sender, EventArgs e)
-        {
-
-			quiz1panel.Visible = false;
-			quiz2panel.Visible = false;
-			quiz3panel.Visible = false;
-			h1.Visible = false;
-            h2.Visible = false;
-            h3.Visible = false;
-            h4.Visible = false;
-            h5.Visible = false;
-            h6.Visible = false;
-            h7.Visible = false;
-            h8.Visible = false;
-            h9.Visible = false;
-            h10.Visible = false;
-            h11.Visible = false;
-            h12.Visible = false;
-            c1.Visible = false;
-            c2.Visible = false;
-            c3.Visible = false;
-            c4.Visible = false;
-            c5.Visible = false;
-            c6.Visible = false;
-            c7.Visible = false;
-            c8.Visible = false;
-            welcome.Visible = false;
-            homeactivatebox.Visible = false;
-            homeactivatelabel.Visible = false;
-            quizactivatebox.Visible = false;
-            quizactivatelabel.Visible = false;
-            scoreboardactivatebox.Visible = true;
-            scoreboardactivatelabel.Visible = true;
-            languageactivatebox.Visible = false;
-            languageactivatelabel.Visible = false;
-            contactactivatebox.Visible = false;
-            contactactivatelabel.Visible = false;
-        }
-
-		//LANGUAGE BUTTON
-        private void languagebutton_Click_1(object sender, EventArgs e)
-        {
-            welcome.Visible = false;
-			quiz1panel.Visible = false;
-			quiz2panel.Visible = false;
-			quiz3panel.Visible = false;
-
-			h1.Visible = false;
-            h2.Visible = false;
-            h3.Visible = false;
-            h4.Visible = false;
-            h5.Visible = false;
-            h6.Visible = false;
-            h7.Visible = false;
-            h8.Visible = false;
-            h9.Visible = false;
-            h10.Visible = false;
-            h11.Visible = false;
-            h12.Visible = false;
-            c1.Visible = false;
-            c2.Visible = false;
-            c3.Visible = false;
-            c4.Visible = false;
-            c5.Visible = false;
-            c6.Visible = false;
-            c7.Visible = false;
-            c8.Visible = false;
-            homeactivatebox.Visible = false;
-            homeactivatelabel.Visible = false;
-            quizactivatebox.Visible = false;
-            quizactivatelabel.Visible = false;
-            scoreboardactivatebox.Visible = false;
-            scoreboardactivatelabel.Visible = false;
-            languageactivatebox.Visible = true;
-            languageactivatelabel.Visible = true;
-            contactactivatebox.Visible = false;
-            contactactivatelabel.Visible = false;
-        }
+		
 
         //CONTACT BUTTON
         private void contactbutton_Click_1(object sender, EventArgs e)
@@ -390,125 +312,7 @@ namespace QuizApplication
         int score = 0;
         int time = 20;
 		              
-        private void button5_Click_1(object sender, EventArgs e)
-        {
-            timer2.Enabled = true;
-            time = 20;
-            button1.BackColor = Color.DarkBlue;
-            button2.BackColor = Color.DarkBlue;
-            button3.BackColor = Color.DarkBlue;
-            button4.BackColor = Color.DarkBlue;
-            btnstart.Enabled = false;
-            button1.Enabled = true;
-            button2.Enabled = true;
-            button3.Enabled = true;
-            button4.Enabled = true;
-            btnstart.Text = "NEXT";
-            counter++;
-            lblquest.Text = counter.ToString();
-            if (counter == 1)
-            {
-                a.Open();
-                SqlCommand b = new SqlCommand("Select * from quest1 order by NEWID()", a);
-                SqlDataReader read = b.ExecuteReader();
-                while (read.Read())
-                {
-                    button1.Text = (read["a"].ToString());
-                    button2.Text = (read["b"].ToString());
-                    button3.Text = (read["c"].ToString());
-                    button4.Text = (read["d"].ToString());
-                    textBox1.Text = (read["Question"].ToString());
-                    lblanswer.Text = (read["True"].ToString());
-                }
-                a.Close();
-            }
-
-            if (counter == 2)
-            {
-                a.Open();
-                SqlCommand b = new SqlCommand("Select * from quest2 order by NEWID()", a);
-                SqlDataReader read = b.ExecuteReader();
-                while (read.Read())
-                {
-                    button1.Text = (read["a"].ToString());
-                    button2.Text = (read["b"].ToString());
-                    button3.Text = (read["c"].ToString());
-                    button4.Text = (read["d"].ToString());
-                    textBox1.Text = (read["Question"].ToString());
-                    lblanswer.Text = (read["True"].ToString());
-                }
-                a.Close();
-            }
-
-            if (counter == 3)
-            {
-                a.Open();
-                SqlCommand b = new SqlCommand("Select * from quest3 order by NEWID()", a);
-                SqlDataReader read = b.ExecuteReader();
-                while (read.Read())
-                {
-                    button1.Text = (read["a"].ToString());
-                    button2.Text = (read["b"].ToString());
-                    button3.Text = (read["c"].ToString());
-                    button4.Text = (read["d"].ToString());
-                    textBox1.Text = (read["Question"].ToString());
-                    lblanswer.Text = (read["True"].ToString());
-                }
-                a.Close();
-            }
-
-            if (counter == 4)
-            {
-                a.Open();
-                SqlCommand b = new SqlCommand("Select * from quest4 order by NEWID()", a);
-                SqlDataReader read = b.ExecuteReader();
-                while (read.Read())
-                {
-                    button1.Text = (read["a"].ToString());
-                    button2.Text = (read["b"].ToString());
-                    button3.Text = (read["c"].ToString());
-                    button4.Text = (read["d"].ToString());
-                    textBox1.Text = (read["Question"].ToString());
-                    lblanswer.Text = (read["True"].ToString());
-                }
-                a.Close();
-            }
-
-            if (counter == 5)
-
-            {
-                a.Open();
-                SqlCommand b = new SqlCommand("Select * from quest5 order by NEWID()", a);
-                SqlDataReader read = b.ExecuteReader();
-
-                while (read.Read())
-                {
-                    button1.Text = (read["a"].ToString());
-                    button2.Text = (read["b"].ToString());
-                    button3.Text = (read["c"].ToString());
-                    button4.Text = (read["d"].ToString());
-                    textBox1.Text = (read["Question"].ToString());
-                    lblanswer.Text = (read["True"].ToString());
-                }
-                a.Close();
-            }
-
-            if (counter == 6)
-            {
-                lblquest.Text = "FİNİSH";
-                btnstart.Enabled = false;
-                btnstart.Text = "GAME OVER";
-                button1.Enabled = false;
-                button2.Enabled = false;
-                button3.Enabled = false;
-                button4.Enabled = false;
-                textBox1.Clear();
-                textBox1.Enabled = false;
-                timer2.Enabled = false;
-                MessageBox.Show("YOUR SCORE İS:" + score);
-            }
-        }
-
+      
         private void button1_Click(object sender, EventArgs e)
         {
             if (button1.Text == lblanswer.Text)
@@ -604,204 +408,24 @@ namespace QuizApplication
             }
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-			//EMPTY
-        }
+      
 
-        private void lbltime_Click(object sender, EventArgs e)
-        {
-			//EMPYU
-        }
+        
 
-		private void quizlistpanel_Paint_1(object sender, PaintEventArgs e)
-		{
-			//EMPTY
-		}
-
-		private void scoreboardmaintain_Click(object sender, EventArgs e)
-		{
-			//EMPTY
-		}
-
-		private void quizlistpanel_Paint_2(object sender, PaintEventArgs e)
-		{
-			//EMPTY
-		}
-
-		private void scoreboardmaintain_Click_1(object sender, EventArgs e)
-		{
-			//EMPTY
-		}
-
-        private void quizlistpanel_Paint(object sender, PaintEventArgs e)
-        {
-            //EMPTY
-        }
+		
 
         //QUİZ MENU PANEL
-        private void btnquiz1_Click(object sender, EventArgs e)
-        {
-            
-            quiz2panel.Visible = false;
-            quiz3panel.Visible = false;
-        }
+       
         
-        private void btnquiz2_Click(object sender, EventArgs e)
-        {
-            quizmenupanel.Visible = false;           
-            quiz2panel.Visible = true;
-        }
-
-        private void btnquiz3_Click(object sender, EventArgs e)
-        {
-           
-            
-            quiz2panel.Visible = false;
-            quiz1panel.Visible = false;
-            quiz3panel.Visible = true;
-
-
-        }
 
         //SECOND QUIZ GAME 
         int counter1 = 0;
         int score1 = 0;
         int time1 = 21;
-        private void btnstart1_Click(object sender, EventArgs e)
-        {
-                time1 = 21;
-                timer3.Enabled = true;
-                btnstart1.Text = "NEXT";
-                counter1++;
-                lblcounter1.Text = counter1.ToString();
-                btnstart1.Enabled = false;
-                a.Open();
-                SqlCommand c = new SqlCommand("Select * from quiz2value1 order by NEWID()", a);
-                SqlDataReader readc = c.ExecuteReader();
-                while (readc.Read())
-                {
-                    lblvalue1.Text = (readc["value"].ToString());
+        
 
-
-                }
-                a.Close();
-
-                a.Open();
-                SqlCommand d = new SqlCommand("Select * from quiz2arop order by NEWID()", a);
-                SqlDataReader readd = d.ExecuteReader();
-                while (readd.Read())
-                {
-                    lblarop.Text = (readd["arop"].ToString());
-
-
-                }
-                a.Close();
-
-                a.Open();
-                SqlCommand g = new SqlCommand("Select * from quiz2value2 order by NEWID()", a);
-                SqlDataReader readg = g.ExecuteReader();
-                while (readg.Read())
-                {
-                    lblvalue2.Text = (readg["value2"].ToString());
-
-
-                }
-                a.Close();
-
-                float v1, v2, arop, sum;               
-                v1 = Convert.ToInt32(lblvalue1.Text);
-                v2 = Convert.ToInt32(lblvalue2.Text);                
-                arop = Convert.ToInt32(lblarop.Text);
-                if (arop == 1)
-                {
-                    lblarop.Text = "+";
-                    sum = v1 + v2;
-                    lblanswer1.Text = sum.ToString();
-
-                }
-                if (arop == 2)
-                {
-                    lblarop.Text = "-";
-                    sum = v1 - v2;
-                    lblanswer1.Text = sum.ToString();
-
-                }
-                if (arop == 3)
-                {
-                    lblarop.Text = "*";
-                    sum = v1 * v2;
-                    lblanswer1.Text = sum.ToString();
-
-                }
-                if (arop == 4)
-                {
-                    if(v2 == 0)
-
-                {
-                    v2 = 1;
-                    lblvalue2.Text = v2.ToString();
-
-                }
-                    lblarop.Text = "/";
-                    sum = v1 / v2;
-                    lblanswer1.Text = sum.ToString();
-                }
-                if(lblcounter1.Text == "6")
-                {
-                    btnstart1.Enabled = false;
-                    btncalculate.Enabled = false;
-                    btnstart1.Text = "GAME OVER";
-                    lblcounter1.Text = "GAME OVER";
-                    timer3.Enabled = false;
-                    MessageBox.Show("YOUR SCORE İS:" + score1);
-                    
-                }
-        }
-
-        private void btncalculate_Click(object sender, EventArgs e)
-        {
-            btncalculate.Enabled = false;
-
-            if (lblanswer1.Text == entervalue.Text)
-            {
-                score1 = score1 + 10;
-                lblscore1.Text = score1.ToString();                                               
-            }
-                entervalue.Clear();
-                btnstart1.Enabled = true;
-                timer3.Enabled = false;
-        }
-
-        private void timer3_Tick(object sender, EventArgs e)
-        {
-            time1 = time1 - 1;
-            lbltime1.Text = time1.ToString();
-
-            if (time1 == 0)
-            {
-                timer3.Enabled = false;
-                btncalculate.Enabled = false;
-                btnstart1.Enabled = true;              
-            }
-            btncalculate.Enabled = true;
-        }
-
-		private void quizmenupanel_Paint(object sender, PaintEventArgs e)
-		{
-			//
-		}
-
-		private void quiz1panel_Paint(object sender, PaintEventArgs e)
-		{
-			//
-		}
-
-		private void pictureBox2_Click(object sender, EventArgs e)
-		{
-			//
-		}
-
+     
+	
 		private void h8_Click(object sender, EventArgs e)
 		{
 			
@@ -810,169 +434,13 @@ namespace QuizApplication
         int foundletters = 0;
         int remaining = 4;
         String capitolName = "";
-        private void btnstart3_Click(object sender, EventArgs e)
-        {
-            a.Open();
-            SqlCommand l = new SqlCommand("Select * from quiz3 order by NEWID()", a);
-            SqlDataReader readl = l.ExecuteReader();
-            while (readl.Read())
-            {
-                foundletters = 0;
-                btnenterletter.Enabled = true;
-                btnguess3.Enabled = true;
-                lblenteredletters.Text = "";
-                remaining = 4;
-                grpboxquestion.Controls.Clear();
+      
 
-                capitolName = (readl["Capitals"].ToString());
-
-                for (int i=0;i<capitolName.Length;i++)
-                {
-                    
-                    Label label = new Label();
-                    label.Location = new Point(35 * i + 30, 30);
-                    label.Text = capitolName[i].ToString();
-                    label.Font = new System.Drawing.Font("Microsoft Sans Serif", 14f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-                    label.Size = new System.Drawing.Size(30, 35);
-                    label.BackColor = Color.Red;
-                    label.ForeColor = Color.Red;
-                    grpboxquestion.Controls.Add(label);
-
-                }
-
-
-                
-
-
-            }
-            a.Close();
-        }
-
-        private void btnenterletter_Click(object sender, EventArgs e)
-        {
-            bool isThereletter = false;
-            if(txtboxenterletter3.Text.Length != 1)
-            {
-                MessageBox.Show("Please enter only one letter!");
-            }
-            else
-            {
-                if(lblenteredletters.Text.Contains(txtboxenterletter3.Text))
-                {
-                    MessageBox.Show("You already entered that letter!");
-                    txtboxenterletter3.Text = "";
-                    txtboxenterletter3.Focus();
-
-                    return;
-                }
-                foreach(Control item in grpboxquestion.Controls)
-                {
-                    if(item is Label)
-                    {
-                        Label label = item as Label;
-                        if(label.Text.ToUpper()==txtboxenterletter3.Text.ToUpper())
-                        {
-                            label.ForeColor = Color.Black;
-                            label.BackColor = Color.Lime;
-                            isThereletter = true;
-                            foundletters++;
-                        }
-                    }
-                }
-            }
-            if(!isThereletter)
-            {
-                remaining--;
-                lblremaining.Text = remaining.ToString();
-                if(remaining == 0)
-                {
-                    btnenterletter.Enabled = false;
-                    btnguess3.Enabled = false;
-                    MessageBox.Show("Game is over,you lose! Answer is :"+capitolName);
-
-                }
-            }
-            lblenteredletters.Text += txtboxenterletter3.Text + " ";
-            if(foundletters==capitolName.Length)
-            {
-                btnenterletter.Enabled = false;
-                btnguess3.Enabled = false;
-                MessageBox.Show("Game is over,congratulations you won!");
-            }
-            txtboxenterletter3.Text = "";
-            txtboxenterletter3.Focus();
-        }
-
-        private void btnguess3_Click(object sender, EventArgs e)
-        {
-            if(capitolName.ToUpper()==txtboxguess3.Text.ToUpper())
-            {
-                foreach(Control item  in grpboxquestion.Controls)
-                {
-                    if(item is Label)
-                    {
-                        Label label = item as Label;
-                        label.ForeColor = Color.Black;
-                        label.BackColor = Color.Lime;
-                    }
-
-                }
-                MessageBox.Show("Game is over,congratulations you won!");
-            }
-            else
-            {
-                MessageBox.Show("Game is over,you lose Answer is:" + capitolName);
-            }
-            btnenterletter.Enabled = false;
-            btnguess3.Enabled = false;
-        }
+       
 
 		private void h11_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			//
-		}
-
-		private void btnquiz1_Click_1(object sender, EventArgs e)
-		{
-			
-		}
-		private void btnquiz2_Click_1(object sender, EventArgs e)
-		{
-			
-		}
-		private void btnquiz3_Click_1(object sender, EventArgs e)
-		{
-		
-		}
-
-		private void quizmenupanel_Paint_1(object sender, PaintEventArgs e)
-		{
-			//
-		}
-
-		private void quiz1panel_Paint_1(object sender, PaintEventArgs e)
-		{
-
-		}
-
-		private void quiz3panel_Paint(object sender, PaintEventArgs e)
-		{
-
-		}
-
-		private void btnquiz1_Click_2(object sender, EventArgs e)
-		{
-		
-		}
-
-		private void btnquiz2_Click_2(object sender, EventArgs e)
-		{
-			
-		}
-
-		private void btnquiz3_Click_2(object sender, EventArgs e)
-		{
-		
 		}
 
 		private void btnquiz1_Click_3(object sender, EventArgs e)
@@ -997,6 +465,370 @@ namespace QuizApplication
 			quiz2panel.Visible = false;
 			quiz3panel.Visible = true;
 			quizmenupanel.Visible = false;
+		}
+
+		private void btnenterletter_Click_1(object sender, EventArgs e)
+		{
+
+			bool isThereletter = false;
+			if (txtboxenterletter3.Text.Length != 1)
+			{
+				MessageBox.Show("Please enter only one letter!");
+			}
+			else
+			{
+				if (lblenteredletters.Text.Contains(txtboxenterletter3.Text))
+				{
+					MessageBox.Show("You already entered that letter!");
+					txtboxenterletter3.Text = "";
+					txtboxenterletter3.Focus();
+
+					return;
+				}
+				foreach (Control item in grpboxquestion.Controls)
+				{
+					if (item is Label)
+					{
+						Label label = item as Label;
+						if (label.Text.ToUpper() == txtboxenterletter3.Text.ToUpper())
+						{
+							label.ForeColor = Color.Black;
+							label.BackColor = Color.Lime;
+							isThereletter = true;
+							foundletters++;
+						}
+					}
+				}
+			}
+			if (!isThereletter)
+			{
+				remaining--;
+				lblremaining.Text = remaining.ToString();
+				if (remaining == 0)
+				{
+					btnenterletter.Enabled = false;
+					btnguess3.Enabled = false;
+					MessageBox.Show("Game is over,you lose! Answer is :" + capitolName);
+
+				}
+			}
+			lblenteredletters.Text += txtboxenterletter3.Text + " ";
+			if (foundletters == capitolName.Length)
+			{
+				btnenterletter.Enabled = false;
+				btnguess3.Enabled = false;
+				MessageBox.Show("Game is over,congratulations you won!");
+			}
+			txtboxenterletter3.Text = "";
+			txtboxenterletter3.Focus();
+		}
+
+		
+
+		private void btnstart3_Click(object sender, EventArgs e)
+		{
+			a.Open();
+			SqlCommand l = new SqlCommand("Select * from quiz3 order by NEWID()", a);
+			SqlDataReader readl = l.ExecuteReader();
+			while (readl.Read())
+			{
+				foundletters = 0;
+				btnenterletter.Enabled = true;
+				btnguess3.Enabled = true;
+				lblenteredletters.Text = "";
+				remaining = 4;
+				grpboxquestion.Controls.Clear();
+
+				capitolName = (readl["Capitals"].ToString());
+
+				for (int i = 0; i < capitolName.Length; i++)
+				{
+
+					Label label = new Label();
+					label.Location = new Point(35 * i + 30, 30);
+					label.Text = capitolName[i].ToString();
+					label.Font = new System.Drawing.Font("Microsoft Sans Serif", 14f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+					label.Size = new System.Drawing.Size(30, 35);
+					label.BackColor = Color.Red;
+					label.ForeColor = Color.Red;
+					grpboxquestion.Controls.Add(label);
+
+				}
+
+
+
+
+
+			}
+			a.Close();
+		}
+
+		private void btncalculate_Click_1(object sender, EventArgs e)
+		{
+			btncalculate.Enabled = false;
+
+			if (lblanswer1.Text == entervalue.Text)
+			{
+				score1 = score1 + 10;
+				lblscore1.Text = score1.ToString();
+			}
+			entervalue.Clear();
+			btnstart1.Enabled = true;
+			timer3.Enabled = false;
+		}
+
+		private void timer3_Tick(object sender, EventArgs e)
+		{
+			time1 = time1 - 1;
+			lbltime1.Text = time1.ToString();
+
+			if (time1 == 0)
+			{
+				timer3.Enabled = false;
+				btncalculate.Enabled = false;
+				btnstart1.Enabled = true;
+			}
+			btncalculate.Enabled = true;
+		}
+
+		private void btnstart1_Click_1(object sender, EventArgs e)
+		{
+
+			time1 = 21;
+			timer3.Enabled = true;
+			btnstart1.Text = "NEXT";
+			counter1++;
+			lblcounter1.Text = counter1.ToString();
+			btnstart1.Enabled = false;
+			a.Open();
+			SqlCommand c = new SqlCommand("Select * from quiz2value1 order by NEWID()", a);
+			SqlDataReader readc = c.ExecuteReader();
+			while (readc.Read())
+			{
+				lblvalue1.Text = (readc["value"].ToString());
+
+
+			}
+			a.Close();
+
+			a.Open();
+			SqlCommand d = new SqlCommand("Select * from quiz2arop order by NEWID()", a);
+			SqlDataReader readd = d.ExecuteReader();
+			while (readd.Read())
+			{
+				lblarop.Text = (readd["arop"].ToString());
+
+
+			}
+			a.Close();
+
+			a.Open();
+			SqlCommand g = new SqlCommand("Select * from quiz2value2 order by NEWID()", a);
+			SqlDataReader readg = g.ExecuteReader();
+			while (readg.Read())
+			{
+				lblvalue2.Text = (readg["value2"].ToString());
+
+
+			}
+			a.Close();
+
+			float v1, v2, arop, sum;
+			v1 = Convert.ToInt32(lblvalue1.Text);
+			v2 = Convert.ToInt32(lblvalue2.Text);
+			arop = Convert.ToInt32(lblarop.Text);
+			if (arop == 1)
+			{
+				lblarop.Text = "+";
+				sum = v1 + v2;
+				lblanswer1.Text = sum.ToString();
+
+			}
+			if (arop == 2)
+			{
+				lblarop.Text = "-";
+				sum = v1 - v2;
+				lblanswer1.Text = sum.ToString();
+
+			}
+			if (arop == 3)
+			{
+				lblarop.Text = "*";
+				sum = v1 * v2;
+				lblanswer1.Text = sum.ToString();
+
+			}
+			if (arop == 4)
+			{
+				if (v2 == 0)
+
+				{
+					v2 = 1;
+					lblvalue2.Text = v2.ToString();
+
+				}
+				lblarop.Text = "/";
+				sum = v1 / v2;
+				lblanswer1.Text = sum.ToString();
+			}
+			if (lblcounter1.Text == "6")
+			{
+				btnstart1.Enabled = false;
+				btncalculate.Enabled = false;
+				btnstart1.Text = "GAME OVER";
+				lblcounter1.Text = "GAME OVER";
+				timer3.Enabled = false;
+				MessageBox.Show("YOUR SCORE İS:" + score1);
+
+			}
+		}
+
+		private void btnstart_Click(object sender, EventArgs e)
+		{
+			timer2.Enabled = true;
+			time = 20;
+			button1.BackColor = Color.DarkBlue;
+			button2.BackColor = Color.DarkBlue;
+			button3.BackColor = Color.DarkBlue;
+			button4.BackColor = Color.DarkBlue;
+			btnstart.Enabled = false;
+			button1.Enabled = true;
+			button2.Enabled = true;
+			button3.Enabled = true;
+			button4.Enabled = true;
+			btnstart.Text = "NEXT";
+			counter++;
+			lblquest.Text = counter.ToString();
+			if (counter == 1)
+			{
+				a.Open();
+				SqlCommand b = new SqlCommand("Select * from quest1 order by NEWID()", a);
+				SqlDataReader read = b.ExecuteReader();
+				while (read.Read())
+				{
+					button1.Text = (read["a"].ToString());
+					button2.Text = (read["b"].ToString());
+					button3.Text = (read["c"].ToString());
+					button4.Text = (read["d"].ToString());
+					textBox1.Text = (read["Question"].ToString());
+					lblanswer.Text = (read["True"].ToString());
+				}
+				a.Close();
+			}
+
+			if (counter == 2)
+			{
+				a.Open();
+				SqlCommand b = new SqlCommand("Select * from quest2 order by NEWID()", a);
+				SqlDataReader read = b.ExecuteReader();
+				while (read.Read())
+				{
+					button1.Text = (read["a"].ToString());
+					button2.Text = (read["b"].ToString());
+					button3.Text = (read["c"].ToString());
+					button4.Text = (read["d"].ToString());
+					textBox1.Text = (read["Question"].ToString());
+					lblanswer.Text = (read["True"].ToString());
+				}
+				a.Close();
+			}
+
+			if (counter == 3)
+			{
+				a.Open();
+				SqlCommand b = new SqlCommand("Select * from quest3 order by NEWID()", a);
+				SqlDataReader read = b.ExecuteReader();
+				while (read.Read())
+				{
+					button1.Text = (read["a"].ToString());
+					button2.Text = (read["b"].ToString());
+					button3.Text = (read["c"].ToString());
+					button4.Text = (read["d"].ToString());
+					textBox1.Text = (read["Question"].ToString());
+					lblanswer.Text = (read["True"].ToString());
+				}
+				a.Close();
+			}
+
+			if (counter == 4)
+			{
+				a.Open();
+				SqlCommand b = new SqlCommand("Select * from quest4 order by NEWID()", a);
+				SqlDataReader read = b.ExecuteReader();
+				while (read.Read())
+				{
+					button1.Text = (read["a"].ToString());
+					button2.Text = (read["b"].ToString());
+					button3.Text = (read["c"].ToString());
+					button4.Text = (read["d"].ToString());
+					textBox1.Text = (read["Question"].ToString());
+					lblanswer.Text = (read["True"].ToString());
+				}
+				a.Close();
+			}
+
+			if (counter == 5)
+
+			{
+				a.Open();
+				SqlCommand b = new SqlCommand("Select * from quest5 order by NEWID()", a);
+				SqlDataReader read = b.ExecuteReader();
+
+				while (read.Read())
+				{
+					button1.Text = (read["a"].ToString());
+					button2.Text = (read["b"].ToString());
+					button3.Text = (read["c"].ToString());
+					button4.Text = (read["d"].ToString());
+					textBox1.Text = (read["Question"].ToString());
+					lblanswer.Text = (read["True"].ToString());
+				}
+				a.Close();
+			}
+
+			if (counter == 6)
+			{
+				lblquest.Text = "FİNİSH";
+				btnstart.Enabled = false;
+				btnstart.Text = "GAME OVER";
+				button1.Enabled = false;
+				button2.Enabled = false;
+				button3.Enabled = false;
+				button4.Enabled = false;
+				textBox1.Clear();
+				textBox1.Enabled = false;
+				timer2.Enabled = false;
+				MessageBox.Show("YOUR SCORE İS:" + score);
+			}
+		}
+
+		private void button1_Click_1(object sender, EventArgs e)
+		{
+			///
+		}
+
+		private void btnguess3_Click(object sender, EventArgs e)
+		{
+			if (capitolName.ToUpper() == txtboxguess3.Text.ToUpper())
+			{
+				foreach (Control item in grpboxquestion.Controls)
+				{
+					if (item is Label)
+					{
+						Label label = item as Label;
+						label.ForeColor = Color.Black;
+						label.BackColor = Color.Lime;
+					}
+
+				}
+				MessageBox.Show("Game is over,congratulations you won!");
+			}
+			else
+			{
+				MessageBox.Show("Game is over,you lose Answer is:" + capitolName);
+			}
+			btnenterletter.Enabled = false;
+			btnguess3.Enabled = false;
 		}
 	}
 

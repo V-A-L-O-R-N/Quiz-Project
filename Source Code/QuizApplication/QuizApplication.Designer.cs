@@ -891,6 +891,7 @@
 			this.btnstart3.TabIndex = 2;
 			this.btnstart3.Text = "START THE GAME";
 			this.btnstart3.UseVisualStyleBackColor = false;
+			this.btnstart3.Click += new System.EventHandler(this.btnstart3_Click);
 			// 
 			// groupBox2
 			// 
@@ -958,6 +959,7 @@
 			this.btnguess3.TabIndex = 3;
 			this.btnguess3.Text = "GUESS";
 			this.btnguess3.UseVisualStyleBackColor = false;
+			this.btnguess3.Click += new System.EventHandler(this.btnguess3_Click);
 			// 
 			// txtboxguess3
 			// 
@@ -979,6 +981,7 @@
 			this.btnenterletter.TabIndex = 1;
 			this.btnenterletter.Text = "LETTER";
 			this.btnenterletter.UseVisualStyleBackColor = false;
+			this.btnenterletter.Click += new System.EventHandler(this.btnenterletter_Click_1);
 			// 
 			// txtboxenterletter3
 			// 
@@ -1015,6 +1018,7 @@
 			this.button1.TabIndex = 27;
 			this.button1.Text = "A";
 			this.button1.UseVisualStyleBackColor = false;
+			this.button1.Click += new System.EventHandler(this.button1_Click_1);
 			// 
 			// button2
 			// 
@@ -1177,6 +1181,7 @@
 			this.btnstart.TabIndex = 32;
 			this.btnstart.Text = "START";
 			this.btnstart.UseVisualStyleBackColor = false;
+			this.btnstart.Click += new System.EventHandler(this.btnstart_Click);
 			// 
 			// quiz1panel
 			// 
@@ -1270,6 +1275,7 @@
 			this.btncalculate.TabIndex = 3;
 			this.btncalculate.Text = "CALCULATE";
 			this.btncalculate.UseVisualStyleBackColor = false;
+			this.btncalculate.Click += new System.EventHandler(this.btncalculate_Click_1);
 			// 
 			// entervalue
 			// 
@@ -1331,6 +1337,7 @@
 			this.btnstart1.TabIndex = 8;
 			this.btnstart1.Text = "START";
 			this.btnstart1.UseVisualStyleBackColor = false;
+			this.btnstart1.Click += new System.EventHandler(this.btnstart1_Click_1);
 			// 
 			// lblscore1
 			// 
@@ -1538,8 +1545,6 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.ButtonShadow;
 			this.ClientSize = new System.Drawing.Size(1284, 611);
-			this.Controls.Add(this.quizmenupanel);
-			this.Controls.Add(this.quiz3panel);
 			this.Controls.Add(this.quiz1panel);
 			this.Controls.Add(this.h12);
 			this.Controls.Add(this.h11);
@@ -1564,6 +1569,8 @@
 			this.Controls.Add(this.leftpanel);
 			this.Controls.Add(this.toppanel);
 			this.Controls.Add(this.quiz2panel);
+			this.Controls.Add(this.quizmenupanel);
+			this.Controls.Add(this.quiz3panel);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "QuizApplication";
