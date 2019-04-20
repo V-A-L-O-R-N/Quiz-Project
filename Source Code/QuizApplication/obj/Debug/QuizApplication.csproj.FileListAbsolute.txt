@@ -92,3 +92,15 @@ C:\Users\theva\Desktop\Quiz Application\Quiz-Project Final Version\Source Code\Q
 C:\Users\theva\Desktop\Quiz Application\Quiz-Project Final Version\Source Code\QuizApplication\obj\Debug\QuizApplication.csproj.CopyComplete
 C:\Users\theva\Desktop\Quiz Application\Quiz-Project Final Version\Source Code\QuizApplication\obj\Debug\QuizApplication.exe
 C:\Users\theva\Desktop\Quiz Application\Quiz-Project Final Version\Source Code\QuizApplication\obj\Debug\QuizApplication.pdb
+C:\Users\theva\Desktop\Quiz Application\Source Code\QuizApplication\bin\Debug\QuizApplication.exe.config
+C:\Users\theva\Desktop\Quiz Application\Source Code\QuizApplication\bin\Debug\QuizApplication.exe
+C:\Users\theva\Desktop\Quiz Application\Source Code\QuizApplication\bin\Debug\QuizApplication.pdb
+C:\Users\theva\Desktop\Quiz Application\Source Code\QuizApplication\obj\Debug\QuizApplication.csprojAssemblyReference.cache
+C:\Users\theva\Desktop\Quiz Application\Source Code\QuizApplication\obj\Debug\QuizApplication.QuizApplication.resources
+C:\Users\theva\Desktop\Quiz Application\Source Code\QuizApplication\obj\Debug\QuizApplication.Properties.Resources.resources
+C:\Users\theva\Desktop\Quiz Application\Source Code\QuizApplication\obj\Debug\QuizApplication.Splash.resources
+C:\Users\theva\Desktop\Quiz Application\Source Code\QuizApplication\obj\Debug\QuizApplication.csproj.GenerateResource.cache
+C:\Users\theva\Desktop\Quiz Application\Source Code\QuizApplication\obj\Debug\QuizApplication.csproj.CoreCompileInputs.cache
+C:\Users\theva\Desktop\Quiz Application\Source Code\QuizApplication\obj\Debug\QuizApplication.csproj.CopyComplete
+C:\Users\theva\Desktop\Quiz Application\Source Code\QuizApplication\obj\Debug\QuizApplication.exe
+C:\Users\theva\Desktop\Quiz Application\Source Code\QuizApplication\obj\Debug\QuizApplication.pdb
