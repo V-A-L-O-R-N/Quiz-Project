@@ -135,6 +135,13 @@
 			this.pictureBox2 = new System.Windows.Forms.PictureBox();
 			this.btnquiz2 = new System.Windows.Forms.Button();
 			this.btnquiz1 = new System.Windows.Forms.Button();
+			this.pictureBox5 = new System.Windows.Forms.PictureBox();
+			this.pictureBox6 = new System.Windows.Forms.PictureBox();
+			this.pictureBox8 = new System.Windows.Forms.PictureBox();
+			this.pictureBox7 = new System.Windows.Forms.PictureBox();
+			this.pictureBox9 = new System.Windows.Forms.PictureBox();
+			this.pictureBox10 = new System.Windows.Forms.PictureBox();
+			this.c10 = new System.Windows.Forms.TextBox();
 			((System.ComponentModel.ISupportInitialize)(this.contactactivatebox)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.languageactivatebox)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.scoreboardactivatebox)).BeginInit();
@@ -162,6 +169,12 @@
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// contactactivatelabel
@@ -871,6 +884,8 @@
 			// quiz3panel
 			// 
 			this.quiz3panel.BackColor = System.Drawing.SystemColors.WindowFrame;
+			this.quiz3panel.Controls.Add(this.pictureBox8);
+			this.quiz3panel.Controls.Add(this.pictureBox7);
 			this.quiz3panel.Controls.Add(this.btnstart3);
 			this.quiz3panel.Controls.Add(this.groupBox2);
 			this.quiz3panel.Controls.Add(this.grpboxquestion);
@@ -883,6 +898,7 @@
 			// btnstart3
 			// 
 			this.btnstart3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(121)))));
+			this.btnstart3.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnstart3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
 			this.btnstart3.ForeColor = System.Drawing.SystemColors.ButtonFace;
 			this.btnstart3.Location = new System.Drawing.Point(224, 63);
@@ -952,6 +968,7 @@
 			// btnguess3
 			// 
 			this.btnguess3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(121)))));
+			this.btnguess3.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnguess3.ForeColor = System.Drawing.SystemColors.ButtonFace;
 			this.btnguess3.Location = new System.Drawing.Point(420, 45);
 			this.btnguess3.Name = "btnguess3";
@@ -974,6 +991,7 @@
 			// btnenterletter
 			// 
 			this.btnenterletter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(121)))));
+			this.btnenterletter.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnenterletter.ForeColor = System.Drawing.SystemColors.ButtonFace;
 			this.btnenterletter.Location = new System.Drawing.Point(161, 46);
 			this.btnenterletter.Name = "btnenterletter";
@@ -1189,6 +1207,8 @@
 			// quiz1panel
 			// 
 			this.quiz1panel.BackColor = System.Drawing.SystemColors.WindowFrame;
+			this.quiz1panel.Controls.Add(this.pictureBox9);
+			this.quiz1panel.Controls.Add(this.pictureBox10);
 			this.quiz1panel.Controls.Add(this.btnstart);
 			this.quiz1panel.Controls.Add(this.lbltime);
 			this.quiz1panel.Controls.Add(this.label2);
@@ -1247,7 +1267,7 @@
 			this.lblarop.ForeColor = System.Drawing.SystemColors.HighlightText;
 			this.lblarop.Location = new System.Drawing.Point(244, 228);
 			this.lblarop.Name = "lblarop";
-			this.lblarop.Size = new System.Drawing.Size(935, 113);
+			this.lblarop.Size = new System.Drawing.Size(73, 38);
 			this.lblarop.TabIndex = 1;
 			this.lblarop.Text = "+";
 			this.lblarop.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1259,7 +1279,7 @@
 			this.lblvalue2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			this.lblvalue2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
 			this.lblvalue2.ForeColor = System.Drawing.SystemColors.HighlightText;
-			this.lblvalue2.Location = new System.Drawing.Point(336, 224);
+			this.lblvalue2.Location = new System.Drawing.Point(336, 228);
 			this.lblvalue2.Name = "lblvalue2";
 			this.lblvalue2.Size = new System.Drawing.Size(57, 40);
 			this.lblvalue2.TabIndex = 2;
@@ -1414,6 +1434,9 @@
 			// 
 			// quiz2panel
 			// 
+			this.quiz2panel.Controls.Add(this.c10);
+			this.quiz2panel.Controls.Add(this.pictureBox6);
+			this.quiz2panel.Controls.Add(this.pictureBox5);
 			this.quiz2panel.Controls.Add(this.label8);
 			this.quiz2panel.Controls.Add(this.lblcounter1);
 			this.quiz2panel.Controls.Add(this.label6);
@@ -1542,13 +1565,95 @@
 			this.btnquiz1.UseVisualStyleBackColor = false;
 			this.btnquiz1.Click += new System.EventHandler(this.btnquiz1_Click_3);
 			// 
+			// pictureBox5
+			// 
+			this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+			this.pictureBox5.Location = new System.Drawing.Point(0, 499);
+			this.pictureBox5.Name = "pictureBox5";
+			this.pictureBox5.Size = new System.Drawing.Size(100, 66);
+			this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox5.TabIndex = 15;
+			this.pictureBox5.TabStop = false;
+			this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
+			// 
+			// pictureBox6
+			// 
+			this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+			this.pictureBox6.Location = new System.Drawing.Point(934, 499);
+			this.pictureBox6.Name = "pictureBox6";
+			this.pictureBox6.Size = new System.Drawing.Size(100, 66);
+			this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox6.TabIndex = 16;
+			this.pictureBox6.TabStop = false;
+			this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click_1);
+			// 
+			// pictureBox8
+			// 
+			this.pictureBox8.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
+			this.pictureBox8.Location = new System.Drawing.Point(934, 497);
+			this.pictureBox8.Name = "pictureBox8";
+			this.pictureBox8.Size = new System.Drawing.Size(100, 66);
+			this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox8.TabIndex = 20;
+			this.pictureBox8.TabStop = false;
+			this.pictureBox8.Click += new System.EventHandler(this.pictureBox8_Click);
+			// 
+			// pictureBox7
+			// 
+			this.pictureBox7.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
+			this.pictureBox7.Location = new System.Drawing.Point(-1, 499);
+			this.pictureBox7.Name = "pictureBox7";
+			this.pictureBox7.Size = new System.Drawing.Size(100, 66);
+			this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox7.TabIndex = 19;
+			this.pictureBox7.TabStop = false;
+			this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
+			// 
+			// pictureBox9
+			// 
+			this.pictureBox9.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
+			this.pictureBox9.Location = new System.Drawing.Point(931, 499);
+			this.pictureBox9.Name = "pictureBox9";
+			this.pictureBox9.Size = new System.Drawing.Size(100, 66);
+			this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox9.TabIndex = 41;
+			this.pictureBox9.TabStop = false;
+			this.pictureBox9.Click += new System.EventHandler(this.pictureBox9_Click);
+			// 
+			// pictureBox10
+			// 
+			this.pictureBox10.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
+			this.pictureBox10.Location = new System.Drawing.Point(1, 499);
+			this.pictureBox10.Name = "pictureBox10";
+			this.pictureBox10.Size = new System.Drawing.Size(100, 66);
+			this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox10.TabIndex = 40;
+			this.pictureBox10.TabStop = false;
+			this.pictureBox10.Click += new System.EventHandler(this.pictureBox10_Click);
+			// 
+			// c10
+			// 
+			this.c10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+			this.c10.Location = new System.Drawing.Point(40, 18);
+			this.c10.Multiline = true;
+			this.c10.Name = "c10";
+			this.c10.Size = new System.Drawing.Size(402, 34);
+			this.c10.TabIndex = 17;
+			this.c10.Text = "thevalorn@gmail.com";
+			this.c10.Visible = false;
+			// 
 			// QuizApplication
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.ButtonShadow;
 			this.ClientSize = new System.Drawing.Size(1284, 611);
-			this.Controls.Add(this.quiz1panel);
 			this.Controls.Add(this.h12);
 			this.Controls.Add(this.h11);
 			this.Controls.Add(this.h10);
@@ -1574,6 +1679,7 @@
 			this.Controls.Add(this.quiz2panel);
 			this.Controls.Add(this.quizmenupanel);
 			this.Controls.Add(this.quiz3panel);
+			this.Controls.Add(this.quiz1panel);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "QuizApplication";
@@ -1614,6 +1720,12 @@
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -1725,6 +1837,13 @@
 		private System.Windows.Forms.PictureBox pictureBox2;
 		private System.Windows.Forms.Button btnquiz2;
 		private System.Windows.Forms.Button btnquiz1;
+		private System.Windows.Forms.PictureBox pictureBox9;
+		private System.Windows.Forms.PictureBox pictureBox10;
+		private System.Windows.Forms.PictureBox pictureBox6;
+		private System.Windows.Forms.PictureBox pictureBox5;
+		private System.Windows.Forms.PictureBox pictureBox8;
+		private System.Windows.Forms.PictureBox pictureBox7;
+		private System.Windows.Forms.TextBox c10;
 	}
 }
 
