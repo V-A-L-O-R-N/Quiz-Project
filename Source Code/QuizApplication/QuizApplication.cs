@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using System.Net.Mail;
+
 
 namespace QuizApplication
 {
@@ -43,7 +43,7 @@ namespace QuizApplication
         }
 		
 		/// DATABASE CONNECTİON	
-		SqlConnection a = new SqlConnection("Data Source=DESKTOP-H6FI1AV;Initial Catalog=QuizApp;Integrated Security=True");
+		SqlConnection a = new SqlConnection("Data Source=HUZEYFE\\SQLEXPRESS;Initial Catalog=QuizApp;Integrated Security=True");
 
 		/// EXİT OPACİTİY TİMER
 		private void timer1_Tick(object sender, EventArgs e)
@@ -800,6 +800,7 @@ namespace QuizApplication
 				timer2.Enabled = false;
 				MessageBox.Show("YOUR SCORE İS:" + score);
 			}
+            
 		}
 
 		private void button1_Click_1(object sender, EventArgs e)
