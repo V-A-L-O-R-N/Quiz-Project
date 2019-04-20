@@ -804,7 +804,21 @@ namespace QuizApplication
 
 		private void button1_Click_1(object sender, EventArgs e)
 		{
-			///
+			if (button1.Text == lblanswer.Text)
+			{
+				score = score + 10;
+				lblscore.Text = score.ToString();
+				button1.BackColor = Color.Green;
+			}
+			else
+			{
+				button1.BackColor = Color.Red;
+			}
+			btnstart.Enabled = true;
+			button1.Enabled = false;
+			button2.Enabled = false;
+			button3.Enabled = false;
+			button4.Enabled = false;
 		}
 
 		private void btnguess3_Click(object sender, EventArgs e)
@@ -829,6 +843,66 @@ namespace QuizApplication
 			}
 			btnenterletter.Enabled = false;
 			btnguess3.Enabled = false;
+		}
+
+		private void button3_Click_1(object sender, EventArgs e)
+		{
+			if (button3.Text == lblanswer.Text)
+			{
+				score = score + 10;
+				lblscore.Text = score.ToString();
+				button3.BackColor = Color.Green;
+			}
+			else
+			{
+				button3.BackColor = Color.Red;
+			}
+
+			btnstart.Enabled = true;
+			button1.Enabled = false;
+			button2.Enabled = false;
+			button3.Enabled = false;
+			button4.Enabled = false;
+		}
+
+		private void button2_Click_1(object sender, EventArgs e)
+		{
+			if (button2.Text == lblanswer.Text)
+			{
+				score = score + 10;
+				lblscore.Text = score.ToString();
+				button2.BackColor = Color.Green;
+			}
+			else
+			{
+				button2.BackColor = Color.Red;
+			}
+
+			btnstart.Enabled = true;
+			button1.Enabled = false;
+			button2.Enabled = false;
+			button3.Enabled = false;
+			button4.Enabled = false;
+		}
+
+		private void button4_Click_1(object sender, EventArgs e)
+		{
+			if (button4.Text == lblanswer.Text)
+			{
+				score = score + 10;
+				lblscore.Text = score.ToString();
+				button4.BackColor = Color.Green;
+			}
+			else
+			{
+				button4.BackColor = Color.Red;
+			}
+
+			btnstart.Enabled = true;
+			button1.Enabled = false;
+			button2.Enabled = false;
+			button3.Enabled = false;
+			button4.Enabled = false;
 		}
 	}
 

@@ -1033,6 +1033,7 @@
 			this.button2.TabIndex = 29;
 			this.button2.Text = "B";
 			this.button2.UseVisualStyleBackColor = false;
+			this.button2.Click += new System.EventHandler(this.button2_Click_1);
 			// 
 			// button3
 			// 
@@ -1048,6 +1049,7 @@
 			this.button3.TabIndex = 30;
 			this.button3.Text = "C";
 			this.button3.UseVisualStyleBackColor = false;
+			this.button3.Click += new System.EventHandler(this.button3_Click_1);
 			// 
 			// button4
 			// 
@@ -1062,6 +1064,7 @@
 			this.button4.TabIndex = 31;
 			this.button4.Text = "D";
 			this.button4.UseVisualStyleBackColor = false;
+			this.button4.Click += new System.EventHandler(this.button4_Click_1);
 			// 
 			// lblanswer
 			// 
