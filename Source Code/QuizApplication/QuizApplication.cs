@@ -8,12 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-<<<<<<< HEAD
 using System.Net;
 using System.Net.Mail;
-=======
-
->>>>>>> 8e906de578cdde055e7133083667d5450d1f6de6
 
 namespace QuizApplication
 {
@@ -48,13 +44,8 @@ namespace QuizApplication
         }
 		///////////////////////////////////////////////////////////////////////////////
 		/// DATABASE CONNECTİON	
-<<<<<<< HEAD
 		SqlConnection a = new SqlConnection("Data Source=DESKTOP-H6FI1AV;Initial Catalog=QuizApp;Integrated Security=True");
 		///////////////////////////////////////////////////////////////////////////////
-=======
-		SqlConnection a = new SqlConnection("Data Source=HUZEYFE\\SQLEXPRESS;Initial Catalog=QuizApp;Integrated Security=True");
-
->>>>>>> 8e906de578cdde055e7133083667d5450d1f6de6
 		/// EXİT OPACİTİY TİMER
 		private void timer1_Tick(object sender, EventArgs e)
         {
@@ -745,12 +736,8 @@ namespace QuizApplication
 				btnguess3.Enabled = false;
 				MessageBox.Show("Game is over,congratulations you won!");
 			}
-<<<<<<< HEAD
 			txtboxenterletter3.Text = "";
 			txtboxenterletter3.Focus();
-=======
-            
->>>>>>> 8e906de578cdde055e7133083667d5450d1f6de6
 		}
 		///////////////////////////////////////////////////////////////////////////////
 		private void btnstart3_Click(object sender, EventArgs e)
@@ -850,6 +837,11 @@ namespace QuizApplication
 			quiz1panel.Visible = false;
 			quiz2panel.Visible = true;
 			quiz3panel.Visible = false;
+		}
+
+		private void quiz3panel_Paint(object sender, PaintEventArgs e)
+		{
+			//
 		}
 	}
 }
