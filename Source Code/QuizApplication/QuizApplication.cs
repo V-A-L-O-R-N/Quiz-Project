@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Net.Mail;
 
 namespace QuizApplication
 {
@@ -21,7 +22,8 @@ namespace QuizApplication
             button3.Enabled = false;
             button4.Enabled = false;
             lblanswer1.Visible = false;
-            
+            btnenterletter.Enabled = false;
+            btnguess3.Enabled = false;
         }
         
         ///REFERENCE MOVABLE TOP SECTİON
@@ -41,7 +43,7 @@ namespace QuizApplication
         }
 		
 		/// DATABASE CONNECTİON	
-		SqlConnection a = new SqlConnection("Data Source=DESKTOP-H6FI1AV;Initial Catalog=QuizApp;Integrated Security=True");
+		SqlConnection a = new SqlConnection("Data Source=HUZEYFE\\SQLEXPRESS;Initial Catalog=QuizApp;Integrated Security=True");
 
 		/// EXİT OPACİTİY TİMER
 		private void timer1_Tick(object sender, EventArgs e)
@@ -632,8 +634,9 @@ namespace QuizApplication
         //QUİZ MENU PANEL
         private void btnquiz1_Click(object sender, EventArgs e)
         {
-            quizmenupanel.Visible = false;
+            
             quiz2panel.Visible = false;
+            quiz3panel.Visible = false;
         }
         
         private void btnquiz2_Click(object sender, EventArgs e)
@@ -642,14 +645,25 @@ namespace QuizApplication
             quiz2panel.Visible = true;
         }
 
+        private void btnquiz3_Click(object sender, EventArgs e)
+        {
+           
+            
+            quiz2panel.Visible = false;
+            quiz1panel.Visible = false;
+            quiz3panel.Visible = true;
+
+
+        }
+
         //SECOND QUIZ GAME 
         int counter1 = 0;
         int score1 = 0;
         int time1 = 21;
         private void btnstart1_Click(object sender, EventArgs e)
         {
-            time1 = 21;
-            timer3.Enabled = true;
+                time1 = 21;
+                timer3.Enabled = true;
                 btnstart1.Text = "NEXT";
                 counter1++;
                 lblcounter1.Text = counter1.ToString();
@@ -731,6 +745,7 @@ namespace QuizApplication
                     btncalculate.Enabled = false;
                     btnstart1.Text = "GAME OVER";
                     lblcounter1.Text = "GAME OVER";
+                    timer3.Enabled = false;
                     MessageBox.Show("YOUR SCORE İS:" + score1);
                     
                 }
@@ -738,7 +753,8 @@ namespace QuizApplication
 
         private void btncalculate_Click(object sender, EventArgs e)
         {
-           
+            btncalculate.Enabled = false;
+
             if (lblanswer1.Text == entervalue.Text)
             {
                 score1 = score1 + 10;
@@ -782,6 +798,126 @@ namespace QuizApplication
 		{
 			
 		}
-	}
+        //THIRD QUIZ GAME
+        int foundletters = 0;
+        int remaining = 4;
+        String capitolName = "";
+        private void btnstart3_Click(object sender, EventArgs e)
+        {
+            a.Open();
+            SqlCommand l = new SqlCommand("Select * from quiz3 order by NEWID()", a);
+            SqlDataReader readl = l.ExecuteReader();
+            while (readl.Read())
+            {
+                foundletters = 0;
+                btnenterletter.Enabled = true;
+                btnguess3.Enabled = true;
+                lblenteredletters.Text = "";
+                remaining = 4;
+                grpboxquestion.Controls.Clear();
+
+                capitolName = (readl["Capitals"].ToString());
+
+                for (int i=0;i<capitolName.Length;i++)
+                {
+                    
+                    Label label = new Label();
+                    label.Location = new Point(35 * i + 30, 30);
+                    label.Text = capitolName[i].ToString();
+                    label.Font = new System.Drawing.Font("Microsoft Sans Serif", 14f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+                    label.Size = new System.Drawing.Size(30, 35);
+                    label.BackColor = Color.Red;
+                    label.ForeColor = Color.Red;
+                    grpboxquestion.Controls.Add(label);
+
+                }
+
+
+                
+
+
+            }
+            a.Close();
+        }
+
+        private void btnenterletter_Click(object sender, EventArgs e)
+        {
+            bool isThereletter = false;
+            if(txtboxenterletter3.Text.Length != 1)
+            {
+                MessageBox.Show("Please enter only one letter!");
+            }
+            else
+            {
+                if(lblenteredletters.Text.Contains(txtboxenterletter3.Text))
+                {
+                    MessageBox.Show("You already entered that letter!");
+                    txtboxenterletter3.Text = "";
+                    txtboxenterletter3.Focus();
+
+                    return;
+                }
+                foreach(Control item in grpboxquestion.Controls)
+                {
+                    if(item is Label)
+                    {
+                        Label label = item as Label;
+                        if(label.Text.ToUpper()==txtboxenterletter3.Text.ToUpper())
+                        {
+                            label.ForeColor = Color.Black;
+                            label.BackColor = Color.Lime;
+                            isThereletter = true;
+                            foundletters++;
+                        }
+                    }
+                }
+            }
+            if(!isThereletter)
+            {
+                remaining--;
+                lblremaining.Text = remaining.ToString();
+                if(remaining == 0)
+                {
+                    btnenterletter.Enabled = false;
+                    btnguess3.Enabled = false;
+                    MessageBox.Show("Game is over,you lose! Answer is :"+capitolName);
+
+                }
+            }
+            lblenteredletters.Text += txtboxenterletter3.Text + " ";
+            if(foundletters==capitolName.Length)
+            {
+                btnenterletter.Enabled = false;
+                btnguess3.Enabled = false;
+                MessageBox.Show("Game is over,congratulations you won!");
+            }
+            txtboxenterletter3.Text = "";
+            txtboxenterletter3.Focus();
+        }
+
+        private void btnguess3_Click(object sender, EventArgs e)
+        {
+            if(capitolName.ToUpper()==txtboxguess3.Text.ToUpper())
+            {
+                foreach(Control item  in grpboxquestion.Controls)
+                {
+                    if(item is Label)
+                    {
+                        Label label = item as Label;
+                        label.ForeColor = Color.Black;
+                        label.BackColor = Color.Lime;
+                    }
+
+                }
+                MessageBox.Show("Game is over,congratulations you won!");
+            }
+            else
+            {
+                MessageBox.Show("Game is over,you lose Answer is:" + capitolName);
+            }
+            btnenterletter.Enabled = false;
+            btnguess3.Enabled = false;
+        }
+    }
 
 }
