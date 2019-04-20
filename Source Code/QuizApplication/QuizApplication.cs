@@ -43,7 +43,7 @@ namespace QuizApplication
         }
 		
 		/// DATABASE CONNECTİON	
-		SqlConnection a = new SqlConnection("Data Source=HUZEYFE\\SQLEXPRESS;Initial Catalog=QuizApp;Integrated Security=True");
+		SqlConnection a = new SqlConnection("Data Source=DESKTOP-H6FI1AV;Initial Catalog=QuizApp;Integrated Security=True");
 
 		/// EXİT OPACİTİY TİMER
 		private void timer1_Tick(object sender, EventArgs e)
@@ -164,6 +164,8 @@ namespace QuizApplication
         {
             quiz1panel.Visible = false;
 			quiz2panel.Visible = false;
+			quiz3panel.Visible = false;
+			quizmenupanel.Visible = false;
 			welcome.Visible = false;
             h1.Visible = true;
             h2.Visible = true;
@@ -203,8 +205,7 @@ namespace QuizApplication
 		//QUİZ LİST BUTTON
         private void quizlistbutton_Click_1(object sender, EventArgs e)
         {
-            quiz1panel.Visible = true;
-            quiz2panel.Visible = true;
+            
             quizmenupanel.Visible = true;         
            
 			welcome.Visible = false;
@@ -244,8 +245,10 @@ namespace QuizApplication
 		//SCOREBOARD BUTTON
         private void scoreboardbutton_Click_1(object sender, EventArgs e)
         {
-			
+
 			quiz1panel.Visible = false;
+			quiz2panel.Visible = false;
+			quiz3panel.Visible = false;
 			h1.Visible = false;
             h2.Visible = false;
             h3.Visible = false;
@@ -284,7 +287,9 @@ namespace QuizApplication
         {
             welcome.Visible = false;
 			quiz1panel.Visible = false;
-			
+			quiz2panel.Visible = false;
+			quiz3panel.Visible = false;
+
 			h1.Visible = false;
             h2.Visible = false;
             h3.Visible = false;
@@ -323,6 +328,9 @@ namespace QuizApplication
 			
 			welcome.Visible = false;
 			quiz1panel.Visible = false;
+			quiz2panel.Visible = false;
+			quiz3panel.Visible = false;
+			quizmenupanel.Visible = false;
 			h1.Visible = false;
             h2.Visible = false;
             h3.Visible = false;
@@ -918,6 +926,78 @@ namespace QuizApplication
             btnenterletter.Enabled = false;
             btnguess3.Enabled = false;
         }
-    }
+
+		private void h11_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			//
+		}
+
+		private void btnquiz1_Click_1(object sender, EventArgs e)
+		{
+			
+		}
+		private void btnquiz2_Click_1(object sender, EventArgs e)
+		{
+			
+		}
+		private void btnquiz3_Click_1(object sender, EventArgs e)
+		{
+		
+		}
+
+		private void quizmenupanel_Paint_1(object sender, PaintEventArgs e)
+		{
+			//
+		}
+
+		private void quiz1panel_Paint_1(object sender, PaintEventArgs e)
+		{
+
+		}
+
+		private void quiz3panel_Paint(object sender, PaintEventArgs e)
+		{
+
+		}
+
+		private void btnquiz1_Click_2(object sender, EventArgs e)
+		{
+		
+		}
+
+		private void btnquiz2_Click_2(object sender, EventArgs e)
+		{
+			
+		}
+
+		private void btnquiz3_Click_2(object sender, EventArgs e)
+		{
+		
+		}
+
+		private void btnquiz1_Click_3(object sender, EventArgs e)
+		{
+			quiz1panel.Visible = true;
+			quiz2panel.Visible = false;
+			quiz3panel.Visible = false;
+			quizmenupanel.Visible = false;
+		}
+
+		private void btnquiz2_Click_3(object sender, EventArgs e)
+		{
+			quiz1panel.Visible = false;
+			quiz2panel.Visible = true;
+			quiz3panel.Visible = false;
+			quizmenupanel.Visible = false;
+		}
+
+		private void btnquiz3_Click_3(object sender, EventArgs e)
+		{
+			quiz1panel.Visible = false;
+			quiz2panel.Visible = false;
+			quiz3panel.Visible = true;
+			quizmenupanel.Visible = false;
+		}
+	}
 
 }
