@@ -44,7 +44,7 @@ namespace QuizApplication
         }
 		///////////////////////////////////////////////////////////////////////////////
 		/// DATABASE CONNECTİON	
-		SqlConnection a = new SqlConnection("Data Source=DESKTOP-H6FI1AV;Initial Catalog=QuizApp;Integrated Security=True");
+		SqlConnection a = new SqlConnection("Data Source=HUZEYFE\\SQLEXPRESS;Initial Catalog=QuizApp;Integrated Security=True");
 		///////////////////////////////////////////////////////////////////////////////
 		/// EXİT OPACİTİY TİMER
 		private void timer1_Tick(object sender, EventArgs e)
@@ -197,7 +197,12 @@ namespace QuizApplication
       	//QUİZ LİST BUTTON
         private void quizlistbutton_Click_1(object sender, EventArgs e)
         {
-            
+            counter = 0;
+            score = 0;
+            time = 20;
+            timer2.Enabled = true;
+            btnstart.Text = "START";
+
             quizmenupanel.Visible = true;         
            
 			welcome.Visible = false;
@@ -347,12 +352,13 @@ namespace QuizApplication
 		private void btnstart_Click(object sender, EventArgs e)
 		{
 			timer2.Enabled = true;
-			time = 20;
-			button1.BackColor = Color.DarkBlue;
-			button2.BackColor = Color.DarkBlue;
-			button3.BackColor = Color.DarkBlue;
-			button4.BackColor = Color.DarkBlue;
-			btnstart.Enabled = false;
+			time = 21;
+            textBox1.ForeColor = Color.White;
+            button1.BackColor = Color.FromArgb(0,72,121);
+			button2.BackColor = Color.FromArgb(0, 72, 121);
+            button3.BackColor = Color.FromArgb(0, 72, 121);
+            button4.BackColor = Color.FromArgb(0, 72, 121);
+            btnstart.Enabled = false;
 			button1.Enabled = true;
 			button2.Enabled = true;
 			button3.Enabled = true;
@@ -457,9 +463,25 @@ namespace QuizApplication
 				button3.Enabled = false;
 				button4.Enabled = false;
 				textBox1.Clear();
-				textBox1.Enabled = false;
-				timer2.Enabled = false;
-				MessageBox.Show("YOUR SCORE İS:" + score);
+				textBox1.Enabled = false;				
+                textBox1.ForeColor = Color.White;
+                MessageBox.Show("YOUR SCORE İS:" + score);
+
+                btnstart.Text = "TRY AGAIN";
+
+                if (btnstart.Text == "TRY AGAIN")
+                {
+                    counter = 0;
+                    score = 0;
+                    time = 21;
+                    textBox1.Enabled = true;
+                    btnstart.Text = "TRY AGAIN";
+                    btnstart.Enabled = true;
+                    lblscore.Text = "00";
+                    lbltime.Text = "00";
+                    textBox1.ForeColor = Color.White;
+                }
+
 			}
 		}
 		///////////////////////////////////////////////////////////////////////////////
@@ -677,7 +699,22 @@ namespace QuizApplication
 				timer3.Enabled = false;
 				MessageBox.Show("YOUR SCORE İS:" + score1);
 
-			}
+               
+
+                if (btnstart1.Text == "GAME OVER")
+                {
+                    counter1 = 0;
+                    score1 = 0;
+                    time1 = 21;
+
+                    btnstart1.Text = "TRY AGAIN";
+                    btnstart1.Enabled = true;
+                    lblscore1.Text = "00";
+                    lbltime1.Text = "00";
+                    lblcounter1.Text = "00";
+                    
+                }
+            }
 		}
 		//THIRD QUIZ GAME
 		int foundletters = 0;
@@ -742,7 +779,13 @@ namespace QuizApplication
 		///////////////////////////////////////////////////////////////////////////////
 		private void btnstart3_Click(object sender, EventArgs e)
 		{
-			a.Open();
+            btnstart3.Text = "NEXT QUESTION";
+            lblremaining.Text = "4";
+            remaining = 4;
+            txtboxenterletter3.Controls.Clear();
+            txtboxguess3.Controls.Clear();
+
+            a.Open();
 			SqlCommand l = new SqlCommand("Select * from quiz3 order by NEWID()", a);
 			SqlDataReader readl = l.ExecuteReader();
 			while (readl.Read())
@@ -774,8 +817,8 @@ namespace QuizApplication
 		}
 		///////////////////////////////////////////////////////////////////////////////
 		private void btnguess3_Click(object sender, EventArgs e)
-		{
-			if (capitolName.ToUpper() == txtboxguess3.Text.ToUpper())
+		{           
+            if (capitolName.ToUpper() == txtboxguess3.Text.ToUpper())
 			{
 				foreach (Control item in grpboxquestion.Controls)
 				{
